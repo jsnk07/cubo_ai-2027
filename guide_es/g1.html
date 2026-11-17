@@ -1,0 +1,154 @@
+<section class="part" id="parte-1"><canvas data-scene="part" data-v="1" aria-hidden="true"></canvas><div class="inner"><div class="num">Módulo F1</div><h2>Visión de la IA, análisis de problemas y pensamiento estructurado</h2><p>Por qué la IA importa ahora, dónde ya está a tu alrededor, cuándo falla y cómo pensar un problema antes de pedirle nada a un modelo.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f1">
+<h3 class="sec-h"><span class="n">F1 · Panorama</span>Lo que vas a lograr</h3>
+<div class="objectives"><div class="lbl">Al terminar F1 podrás</div><ul>
+<li>Explicar por qué la IA está transformando el ecosistema global y qué oportunidades abre.</li>
+<li>Reconocer sistemas inteligentes en procesos cotidianos e industriales.</li>
+<li>Descomponer un problema y distinguir sus síntomas de sus causas.</li>
+<li>Identificar los fallos típicos de los modelos y decidir cuándo conviene usar IA y cuándo no.</li>
+<li>Pensar como constructor y no solo como usuario de IA.</li>
+</ul><div class="meta-row"><span>5 temas</span><span>Entregable: mapa de descomposición + evaluación de fiabilidad</span></div></div>
+<div class="topicmap"><a href="#f1-1"><b>F1.1</b>Por qué la IA y por qué ahora</a><a href="#f1-2"><b>F1.2</b>Sistemas inteligentes a tu alrededor</a><a href="#f1-3"><b>F1.3</b>Límites y fallos</a><a href="#f1-4"><b>F1.4</b>Causa raíz</a><a href="#f1-5"><b>F1.5</b>La filosofía del constructor</a></div>
+
+<section class="sec" id="f1-1">
+<h3 class="sec-h"><span class="n">F1.1</span>Por qué la IA y por qué ahora</h3>
+<p>La inteligencia artificial no es nueva: el término se acuñó en 1956 y durante décadas avanzó a saltos, con épocas de entusiasmo y “inviernos” de poco financiamiento. Lo que cambió en los últimos años fue la combinación de tres ingredientes que por fin llegaron juntos:</p>
+<ul>
+<li><b>Datos:</b> internet produjo cantidades enormes de texto, imágenes y código con las que entrenar modelos.</li>
+<li><b>Cómputo:</b> los procesadores gráficos (GPUs), diseñados para videojuegos, resultaron ideales para las operaciones matemáticas que necesitan las redes neuronales.</li>
+<li><b>Algoritmos:</b> en 2017 apareció la arquitectura Transformer, que permitió entrenar modelos mucho más grandes y que es la base de los modelos de lenguaje actuales.</li>
+</ul>
+<p>Ese punto de inflexión hizo que tareas que antes requerían un equipo de especialistas, como resumir documentos, clasificar solicitudes, traducir o escribir código, hoy se puedan prototipar en días. La oportunidad no está solo en crear modelos nuevos, sino en <b>aplicar bien</b> los que ya existen a problemas concretos de instituciones, empresas y personas.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Datos + cómputo + algoritmos: los tres explican el salto reciente.</li>
+<li>La mayor parte del valor está en la aplicación, no en entrenar modelos desde cero.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué proceso de tu trabajo o de tu comunidad depende hoy de leer, clasificar o resumir mucha información a mano?</div>
+
+<section class="sec" id="f1-2">
+<h3 class="sec-h"><span class="n">F1.2</span>Reconocer sistemas inteligentes en tu entorno</h3>
+<p>Ya usas IA todos los días, aunque no la llames así. Aprender a verla te ayuda a imaginar dónde más podría servir:</p>
+<ul>
+<li><b>Recomendación:</b> lo que te muestran las redes, las tiendas en línea y las plataformas de video.</li>
+<li><b>Clasificación:</b> el filtro de spam, la detección de fraude con tarjeta, la priorización de tickets de soporte.</li>
+<li><b>Percepción:</b> el desbloqueo con la cara, el reconocimiento de placas, el texto que tu teléfono lee en una foto.</li>
+<li><b>Lenguaje:</b> asistentes conversacionales, traducción automática, dictado por voz.</li>
+<li><b>Predicción:</b> demanda de inventario, mantenimiento de máquinas, tiempos de llegada.</li>
+</ul>
+<p>Para cada sistema puedes hacerte tres preguntas: ¿qué entra (datos)?, ¿qué sale (una decisión, un número, un texto)? y ¿quién revisa si se equivoca?</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Casi todo sistema de IA hace una de cinco cosas: recomendar, clasificar, percibir, generar lenguaje o predecir.</li>
+<li>Entrada, salida y supervisión: con eso describes cualquier sistema.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>Elige un sistema que usaste hoy. ¿Qué pasaría si se equivocara y nadie lo notara?</div>
+
+<section class="sec" id="f1-3">
+<h3 class="sec-h"><span class="n">F1.3</span>Diagnóstico de límites y fallos en modelos</h3>
+<p>Un modelo de lenguaje no “sabe” cosas como una base de datos. Aprendió patrones de cómo se escribe el texto y genera la continuación más probable. Por eso puede producir respuestas fluidas y seguras que son falsas: a eso se le llama <b>alucinación</b>.</p>
+<p>Los fallos más comunes que vas a encontrar:</p>
+<ul>
+<li><b>Hechos inventados:</b> citas, cifras, leyes o referencias que no existen.</li>
+<li><b>Información desactualizada:</b> el modelo solo conoce lo que había en sus datos de entrenamiento.</li>
+<li><b>Cálculos y lógica:</b> errores en operaciones de varios pasos si no usa una herramienta.</li>
+<li><b>Sesgos:</b> respuestas que reflejan desequilibrios de los datos con que se entrenó.</li>
+<li><b>Sensibilidad al prompt:</b> la misma pregunta con otras palabras puede dar otra respuesta.</li>
+</ul>
+<p>¿Cuándo <b>no</b> usar IA? Cuando el costo de un error es alto y no hay quien lo revise, cuando una regla simple resuelve el problema, cuando no hay datos de calidad o cuando la decisión exige responsabilidad legal que nadie puede delegar.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Fluidez no es exactitud: verifica siempre lo que importa.</li>
+<li>Una buena decisión de diseño puede ser “aquí no va IA”.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué tasa de error aceptarías en un sistema que clasifica correos? ¿Y en uno que sugiere diagnósticos médicos?</div>
+
+<section class="sec" id="f1-4">
+<h3 class="sec-h"><span class="n">F1.4</span>Descomposición analítica y causa raíz</h3>
+<p>Muchos proyectos de IA fracasan porque resuelven un síntoma. “Los ciudadanos se quejan de que el trámite tarda” es un síntoma; la causa puede ser un formulario confuso, documentos que se piden dos veces o un cuello de botella en una sola persona que revisa todo. La IA ayuda en algunas de esas causas y en otras no.</p>
+<p>Dos herramientas sencillas:</p>
+<ul>
+<li><b>Los cinco porqués:</b> pregunta “¿por qué?” sobre el problema y luego sobre cada respuesta, hasta llegar a algo que se pueda cambiar.</li>
+<li><b>Árbol de problemas:</b> el problema central en el tronco, las causas en las raíces y los efectos en las ramas. Cada causa se vuelve una posible línea de solución.</li>
+</ul>
+<p>Al final deberías poder escribir el problema en una frase con <b>quién</b> lo vive, <b>qué</b> pasa, <b>cuánto</b> cuesta (en tiempo, dinero o calidad) y <b>por qué</b> pasa.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Síntoma: lo que se ve. Causa: lo que, si cambias, hace desaparecer el síntoma.</li>
+<li>Primero el problema, después la tecnología.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>Toma un problema que conozcas bien. ¿Cuál de sus causas resolvería un buen sistema de IA y cuál no?</div>
+
+<section class="sec" id="f1-5">
+<h3 class="sec-h"><span class="n">F1.5</span>La filosofía del constructor</h3>
+<p>Escribir buenos prompts es útil, pero no es el objetivo de CUBO_ai. Un <b>creador de prompts</b> le pregunta a un modelo y copia la respuesta. Un <b>constructor</b> entiende el sistema completo: de dónde vienen los datos, qué herramientas usa el modelo, cómo se mide si acierta, qué pasa cuando falla y quién lo supervisa.</p>
+<p>Esa diferencia se nota en las preguntas que te haces:</p>
+<ul>
+<li>En vez de “¿qué prompt uso?”, “¿qué entrada, qué salida y cómo sé que está bien?”.</li>
+<li>En vez de “funcionó en mi prueba”, “¿en cuántos casos funciona y en cuáles falla?”.</li>
+<li>En vez de “el modelo lo dijo”, “¿con qué fuente lo verifico?”.</li>
+</ul>
+<p>Esta forma de pensar aplica igual a perfiles técnicos y complementarios. Quien define buenos casos de prueba y criterios de calidad también está construyendo.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Constructor = sistema + datos + medición + supervisión.</li>
+<li>Los criterios de calidad son parte del producto, no un trámite.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué tendría que pasar para que confiaras en un asistente de IA para responder consultas de tu institución sin revisión humana?</div>
+
+<section class="sec" id="f1-eval">
+<h3 class="sec-h"><span class="n">F1 · Autoevaluación</span>Comprueba lo que aprendiste</h3>
+<details class="qa"><summary>¿Qué tres ingredientes explican el avance reciente de la IA?</summary><p>Grandes cantidades de datos, cómputo accesible (sobre todo GPUs) y mejores algoritmos, en especial la arquitectura Transformer (2017).</p></details>
+<details class="qa"><summary>¿Qué es una alucinación?</summary><p>Una respuesta del modelo que suena convincente pero es falsa o no tiene respaldo, porque el modelo genera texto probable, no consulta hechos.</p></details>
+<details class="qa"><summary>Da dos situaciones en las que no conviene usar IA.</summary><p>Cuando una regla simple resuelve el problema; cuando un error es grave y nadie lo va a revisar; cuando no hay datos de calidad; cuando la decisión exige una responsabilidad que no se puede delegar.</p></details>
+<details class="qa"><summary>¿En qué se diferencia un síntoma de una causa?</summary><p>El síntoma es lo visible; la causa es lo que, si se corrige, hace desaparecer el síntoma.</p></details>
+<details class="qa"><summary>¿Qué distingue a un constructor de un creador de prompts?</summary><p>El constructor entiende y diseña el sistema completo: datos, herramientas, medición de calidad, manejo de fallos y supervisión, no solo la pregunta al modelo.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f1">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F1</div><h4>Mapa del problema y prueba de fiabilidad</h4><p>Descompón un problema operativo real y mide qué tan confiable sería un modelo de lenguaje para ayudar a resolverlo. Produce el entregable de F1.</p><div class="meta-row"><span>3 horas</span><span>Individual o en pareja</span><span>Técnica: Docker + Ollama</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Ruta técnica</h5><span class="who">Mide la tasa de alucinación de un modelo local</span>
+ <ol>
+  <li>Crea un repositorio <code>cuboai-f1</code> en GitHub y clónalo.</li>
+  <li>Levanta Ollama en Docker y descarga un modelo pequeño:
+<pre><code>docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+docker exec -it ollama ollama pull llama3.2:1b
+docker exec -it ollama ollama run llama3.2:1b "¿Cuál es la capital de El Salvador?"</code></pre></li>
+  <li>Elige un problema operativo y escribe en <code>preguntas.csv</code> diez preguntas sobre su tema cuya respuesta correcta conozcas, con columnas <code>pregunta,respuesta_correcta</code>.</li>
+  <li>Escribe <code>prueba.py</code>, que manda cada pregunta a la API local y guarda la respuesta:
+<pre><code>import csv, requests
+URL = "http://localhost:11434/api/chat"
+with open("preguntas.csv") as f, open("resultados.csv", "w", newline="") as out:
+    w = csv.writer(out); w.writerow(["pregunta", "esperada", "modelo"])
+    for row in csv.DictReader(f):
+        r = requests.post(URL, json={"model": "llama3.2:1b", "stream": False,
+            "messages": [{"role": "user", "content": row["pregunta"]}]})
+        w.writerow([row["pregunta"], row["respuesta_correcta"],
+                    r.json()["message"]["content"]])</code></pre></li>
+  <li>Revisa <code>resultados.csv</code> y marca cada respuesta como correcta, incompleta o alucinada. Calcula el porcentaje de cada una.</li>
+  <li>En el README, dibuja el árbol del problema con un diagrama Mermaid y escribe en qué partes usarías el modelo y en cuáles no, con tus porcentajes como evidencia.</li>
+ </ol></div>
+ <div class="route c"><h5>Ruta complementaria</h5><span class="who">Árbol de problemas y matriz de fiabilidad</span>
+ <ol>
+  <li>Elige un problema operativo real de una institución, empresa o comunidad que conozcas.</li>
+  <li>Aplica los cinco porqués y dibuja el árbol de problemas: problema central, causas y efectos.</li>
+  <li>Para cada causa, completa una tabla: ¿la IA ayuda? (sí, en parte, no), ¿qué haría?, ¿qué pasa si se equivoca?, ¿quién lo revisaría?</li>
+  <li>Prueba un asistente de IA con diez preguntas sobre el tema cuya respuesta conozcas. Registra cuántas acierta, cuántas quedan incompletas y cuántas inventa.</li>
+  <li>Escribe una conclusión de una página: dónde el modelo es confiable, dónde no y qué control humano pondrías.</li>
+ </ol></div>
+</div>
+{{SHOTS_F1}}
+<div class="diy-f">
+ <div><div class="lbl">Entregable</div><p>Mapa analítico de descomposición del problema (árbol o diagrama) y una evaluación de los límites de fiabilidad de una posible solución con IA, respaldada por tu prueba de diez preguntas.</p></div>
+ <div><div class="lbl">Lista de verificación</div><ul class="check"><li>El problema está escrito con quién, qué, cuánto y por qué.</li><li>Separaste síntomas de causas.</li><li>Tienes porcentajes de aciertos y alucinaciones, no impresiones.</li><li>Dijiste con claridad dónde no usarías IA.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F1</span>Lecturas recomendadas</h4>
+<ul class="readings">
+<li><a href="https://www.elementsofai.com/" target="_blank" rel="noopener">University of Helsinki y MinnaLearn, <i>Elements of AI</i></a>. <span class="kind">curso gratuito introductorio</span></li>
+<li><a href="https://hai.stanford.edu/ai-index" target="_blank" rel="noopener">Stanford HAI, <i>AI Index Report</i></a>. <span class="kind">informe anual · datos del sector</span></li>
+<li><a href="https://www.coursera.org/learn/ai-for-everyone" target="_blank" rel="noopener">Andrew Ng, <i>AI For Everyone</i></a>. <span class="kind">curso · visión para no técnicos</span></li>
+<li><a href="https://ollama.com/" target="_blank" rel="noopener">Ollama: modelos abiertos en tu computadora</a>. <span class="kind">herramienta · documentación</span></li>
+</ul>
+</div>

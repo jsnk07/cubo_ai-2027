@@ -1,0 +1,120 @@
+<section class="part" id="parte-4"><canvas data-scene="part" data-v="4" aria-hidden="true"></canvas><div class="inner"><div class="num">Module F4</div><h2>Data as a system, machine learning and computer vision</h2><p>Why data decides an AI project, how a model learns from scratch and how a neural network comes to “see” an image.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f4">
+<h3 class="sec-h"><span class="n">F4 · Overview</span>What you will achieve</h3>
+<div class="objectives"><div class="lbl">By the end of F4 you will be able to</div><ul>
+<li>Collect, clean and structure data, prioritizing its quality.</li>
+<li>Explain how a machine learning model is trained and evaluated.</li>
+<li>Describe the structure of a neural network and how it processes images.</li>
+</ul><div class="meta-row"><span>3 topics</span><span>Deliverable: data pipeline + technical report on a model</span></div></div>
+<div class="topicmap"><a href="#f4-1"><b>F4.1</b>Data as a system</a><a href="#f4-2"><b>F4.2</b>Machine learning from scratch</a><a href="#f4-3"><b>F4.3</b>Neural networks and vision</a></div>
+
+<section class="sec" id="f4-1">
+<h3 class="sec-h"><span class="n">F4.1</span>Data as a system</h3>
+<p>A model is only as good as the data it is trained and evaluated on. A brilliant algorithm with dirty data produces bad results with great confidence. That is why in real projects most of the time goes into the data, not the model.</p>
+<p>Think of data as a system with stages:</p>
+<ol>
+<li><b>Capture:</b> where it comes from, with what permission and how often.</li>
+<li><b>Cleaning:</b> duplicates, missing values, inconsistent formats (dates, capitalization, units), typing errors.</li>
+<li><b>Structure:</b> columns with clear meaning, correct types, a data dictionary explaining each field.</li>
+<li><b>Quality:</b> does it represent all the cases and groups the system will see in reality?</li>
+<li><b>Versioning:</b> knowing which version of the data produced which result.</li>
+</ol>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Data quality before model architecture.</li>
+<li>If a group is not in the data, the model will not know how to treat it well.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>Which data in your institution lives on paper, in loose spreadsheets or in different formats? What would it take to use it?</div>
+
+<section class="sec" id="f4-2">
+<h3 class="sec-h"><span class="n">F4.2</span>Machine learning from first principles</h3>
+<p>In traditional programming you write the rules. In machine learning you give the system examples with the right answer and it finds the rules. A model that predicts whether a customer will pay on time learns from thousands of past cases with their outcome.</p>
+<p>The basic cycle:</p>
+<ol>
+<li><b>Split the data</b> into training (to learn) and test (to measure). Never measure with the same data you trained on.</li>
+<li><b>Train</b> a model: the algorithm adjusts its parameters to make as few mistakes as possible on the examples.</li>
+<li><b>Evaluate</b> with the test data: accuracy, precision, recall and the confusion matrix, which shows what it confuses with what.</li>
+<li><b>Review the errors:</b> in which cases does it fail? Does it fail more for some group?</li>
+</ol>
+<p>Watch out for <b>overfitting</b>: a model that memorizes the training data gets almost everything right there and fails on new cases. If the training score is much better than the test score, it is memorizing.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Examples with answers → the model learns the rules.</li>
+<li>Training and test always kept apart.</li>
+<li>The confusion matrix says more than a single percentage.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>A fraud detection model is 99% accurate. If only 1% of transactions are fraud, is it a good model?</div>
+
+<section class="sec" id="f4-3">
+<h3 class="sec-h"><span class="n">F4.3</span>Neural networks and computer vision</h3>
+<p>A neural network is a chain of layers of simple math operations. Each “neuron” multiplies its inputs by weights, adds them up and applies a function. During training, the weights are adjusted little by little to reduce the error. With many layers, the network learns increasingly abstract representations: that is deep learning.</p>
+<p>To a computer, an image is a table of numbers: the brightness of each pixel. Networks for vision, such as convolutional ones, first learn edges, then shapes and then objects. With that you build tasks like:</p>
+<ul class="cols2">
+<li>Classification: what is in the image?</li>
+<li>Detection: where is each object?</li>
+<li>Segmentation: which pixels belong to what?</li>
+<li>Reading text (OCR) in photos and documents.</li>
+</ul>
+<p>The same F4.1 problems apply here: if the training images were taken in good light, the model may fail at night.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>A neural network learns by adjusting weights to reduce error.</li>
+<li>An image is a matrix of numbers; the network learns patterns on it.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>Which visual task in your environment (documents, crops, traffic, infrastructure) could be automated, and what images would you need to train it?</div>
+
+<section class="sec" id="f4-eval">
+<h3 class="sec-h"><span class="n">F4 · Self-assessment</span>Check what you learned</h3>
+<details class="qa"><summary>Why split data into training and test sets?</summary><p>To measure performance on cases the model has not seen; measuring on training data overestimates quality.</p></details>
+<details class="qa"><summary>What is overfitting and how do you detect it?</summary><p>It is when the model memorizes the training data and generalizes poorly. You see it when training performance is much better than test performance.</p></details>
+<details class="qa"><summary>What does a confusion matrix show?</summary><p>How many cases of each true class were classified as each predicted class, that is, which mistakes the model makes.</p></details>
+<details class="qa"><summary>Name three common data cleaning problems.</summary><p>Duplicates, missing values, inconsistent formats and typing errors (any three).</p></details>
+<details class="qa"><summary>How does a neural network “see” an image?</summary><p>As a matrix of numbers with each pixel's brightness, on which it learns patterns of edges, shapes and objects.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f4">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F4</div><h4>From dirty data to an evaluated model</h4><p>Clean a dataset, train a basic vision model and explain with numbers how well it works. Produces the F4 deliverable.</p><div class="meta-row"><span>3–4 hours</span><span>Individual or in pairs</span><span>Technical: Jupyter in Docker or Colab</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Technical route</h5><span class="who">Cleaning pipeline and digit classifier</span>
+ <ol>
+  <li>Open a notebook. Without installing anything, use Google Colab, or start Jupyter in Docker and go to the address the terminal prints:
+<pre><code>docker run -p 8888:8888 -v "$PWD":/home/jovyan/work quay.io/jupyter/scipy-notebook</code></pre></li>
+  <li>Download an open-data CSV that interests you and write a <code>clean(df)</code> function with pandas that removes duplicates, handles missing values, normalizes dates and text, and sets types. Print how many rows each step changed.</li>
+  <li>Train a classifier of handwritten digit images (included in scikit-learn):
+<pre><code>from sklearn.datasets import load_digits
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix
+X, y = load_digits(return_X_y=True)          <span class="c"># 8×8-pixel images</span>
+Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.25, random_state=0)
+m = MLPClassifier(hidden_layer_sizes=(64,), max_iter=500, random_state=0).fit(Xtr, ytr)
+print("train:", m.score(Xtr, ytr), "test:", accuracy_score(yte, m.predict(Xte)))
+print(confusion_matrix(yte, m.predict(Xte)))</code></pre></li>
+  <li>Show three images the model misclassified and explain why you think it failed.</li>
+  <li>Change the size of the hidden layer and compare training against test: does overfitting appear?</li>
+ </ol></div>
+ <div class="route c"><h5>Complementary route</h5><span class="who">Quality audit of a dataset</span>
+ <ol>
+  <li>Choose an open dataset from your field (for example, from a public data portal).</li>
+  <li>Write its data dictionary: each field, what it means, its type and its possible values.</li>
+  <li>In a spreadsheet, count duplicates, empty cells and out-of-range values, and document each problem.</li>
+  <li>Analyze representativeness: which groups, areas or periods are missing or over-represented?</li>
+  <li>Propose an ML use case with that data and write which metric you would use to evaluate it and which error would be most costly.</li>
+ </ol></div>
+</div>
+{{SHOTS_F4}}
+<div class="diy-f">
+ <div><div class="lbl">Deliverable</div><p>A data preparation pipeline (code or documented procedure) and a one- to two-page technical report evaluating a predictive or vision model: data, method, metrics, errors and limitations.</p></div>
+ <div><div class="lbl">Checklist</div><ul class="check"><li>Each cleaning step says how many records it affected.</li><li>Metrics come from test data, not training data.</li><li>You show concrete examples of errors.</li><li>You name at least one bias or gap in the data.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F4</span>Recommended readings</h4>
+<ul class="readings">
+<li><a href="https://developers.google.com/machine-learning/crash-course" target="_blank" rel="noopener">Google, <i>Machine Learning Crash Course</i></a>. <span class="kind">free course</span></li>
+<li><a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank" rel="noopener">3Blue1Brown, neural networks series</a>. <span class="kind">video · visual intuition</span></li>
+<li><a href="https://scikit-learn.org/stable/tutorial/index.html" target="_blank" rel="noopener">scikit-learn tutorials</a>. <span class="kind">documentation</span></li>
+<li><a href="https://pandas.pydata.org/docs/getting_started/index.html" target="_blank" rel="noopener">pandas, <i>Getting started</i></a>. <span class="kind">documentation</span></li>
+</ul>
+</div>

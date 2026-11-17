@@ -1,0 +1,114 @@
+<section class="part" id="parte-6"><canvas data-scene="part" data-v="6" aria-hidden="true"></canvas><div class="inner"><div class="num">Preparación</div><h2>Rumbo a The AI Challenge</h2><p>Tres semanas en equipo para llevar un problema real a una solución de IA que puedas demostrar y defender.</p></div></section>
+
+<div class="col">
+<section class="sec" id="c-1">
+<h3 class="sec-h"><span class="n">Challenge · 1</span>Cómo funciona el Challenge</h3>
+<p>The AI Challenge dura tres semanas consecutivas. Trabajarás en un equipo de cuatro, dos perfiles técnicos y dos complementarios, sobre un reto del Catálogo de Proyectos: un asistente con RAG, una automatización de triaje, una plataforma de tutoría, un pipeline predictivo u otro caso real.</p>
+<div class="tbl"><table><thead><tr><th>Semana</th><th>Foco</th><th>Puerta de evaluación</th></tr></thead><tbody>
+<tr><td>1</td><td>Detectar, comprender y delimitar</td><td>¿Qué problema, para quién, por qué importa y qué restricciones de IA hay?</td></tr>
+<tr><td>2</td><td>Construir y probar</td><td>¿Hay evidencia sólida de ejecución, prototipado y validación?</td></tr>
+<tr><td>3</td><td>Finalizar, defender y evaluar</td><td>Cierre de entrega, Demo Day y defensa individual</td></tr>
+</tbody></table></div>
+<p>Tu nota final es <b>60 % del equipo y 40 % individual</b>. Avanzas al Bootcamp con una nota final de al menos 70 y una individual de al menos 60, siempre que haya cupo.</p>
+<p>Calcula entre 18 y 25 horas por semana: 8 a 10 de sesiones del programa y 10 a 15 de trabajo en equipo. Cada equipo tiene un mentor técnico y uno estratégico, con al menos una sesión por semana.</p>
+
+<section class="sec" id="c-2">
+<h3 class="sec-h"><span class="n">Challenge · 2</span>Git y GitHub para equipos</h3>
+<p>En el Challenge, el repositorio es tu oficina y tu evidencia. Todo el equipo trabaja ahí, incluidos los perfiles complementarios: sus documentos viven en <code>/strategy</code> y sus casos de prueba en <code>/src/tests</code> o <code>/strategy</code>, en Markdown o CSV.</p>
+<pre><code>git switch -c feature/servidor-mcp        <span class="c"># una rama por tarea</span>
+<span class="c"># ...haces cambios...</span>
+git add .
+git commit -m "feat: herramienta buscar_documentos con embeddings"
+git push -u origin feature/servidor-mcp
+<span class="c"># en GitHub: abre un pull request y pide revisión</span></code></pre>
+<ul>
+<li><b>Commits pequeños y descriptivos:</b> un cambio lógico por commit, con un mensaje que diga qué y por qué.</li>
+<li><b>Pull requests revisados:</b> nadie mezcla su propio trabajo sin que otra persona lo lea.</li>
+<li><b>Issues para tareas y decisiones:</b> quedan registradas y asignadas.</li>
+<li><b>Los prompts también se versionan:</b> guárdalos en <code>/src/prompts</code> para que el historial muestre cómo evolucionaron.</li>
+</ul>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>El jurado revisa la calidad y la evolución del trabajo, no el número de commits.</li>
+<li>Una carga masiva el último día pesa en contra de tu evaluación individual.</li>
+</ul></div>
+
+<section class="sec" id="c-3">
+<h3 class="sec-h"><span class="n">Challenge · 3</span>La estructura del repositorio</h3>
+<p>Usa esta estructura como punto de partida y adáptala a tu proyecto:</p>
+<pre><code>/src        /app · /prompts · /scripts · /tests
+/docs       architecture.md · threat-model.md · setup.md
+/strategy   opportunity-brief.md · user-research.md
+            business-model.md · validation-log.md
+README.md   resumen ejecutivo y cómo correrlo
+LICENSE     licencia de código abierto</code></pre>
+<p>El README es lo primero que lee el jurado: qué problema resuelve, para quién, cómo se instala y qué está implementado, simulado o solo propuesto.</p>
+
+<section class="sec" id="c-4">
+<h3 class="sec-h"><span class="n">Challenge · 4</span>Del problema a la oportunidad</h3>
+<p>La primera semana decide el resto. Antes de programar, el equipo debe poder responder en un minuto: ¿qué problema hay, a quién le pasa, cómo se resuelve hoy y por qué la IA ayuda (o por qué solo en una parte)?</p>
+<p>Escríbanlo en el <b>Opportunity Brief</b> (plantilla en el anexo) y acompáñenlo con un mapa de actores. Los perfiles técnicos lo traducen en requerimientos, modelos, APIs y una arquitectura inicial; los complementarios, en requerimientos de usuario, un conjunto de casos de prueba y criterios para decidir si una respuesta es buena.</p>
+<div class="think"><b>Para pensar</b>Si tu solución funcionara perfecto, ¿qué número cambiaría en la vida del usuario?</div>
+
+<section class="sec" id="c-5">
+<h3 class="sec-h"><span class="n">Challenge · 5</span>Evaluar un sistema de IA</h3>
+<p>Un sistema de IA no se valida con una demostración que salió bien. Se valida con un <b>conjunto de evaluación</b>: casos con la respuesta esperada que se corren cada vez que cambia algo.</p>
+<ul>
+<li><b>Exactitud:</b> ¿cuántas respuestas son correctas?</li>
+<li><b>Alucinaciones:</b> ¿cuántas inventan datos o fuentes?</li>
+<li><b>Negativas correctas:</b> ¿sabe decir “no sé” o “no puedo” cuando corresponde?</li>
+<li><b>Sesgo:</b> ¿cambia la respuesta si cambias un atributo personal?</li>
+<li><b>Operación:</b> tiempo de respuesta, tokens y costo por consulta.</li>
+</ul>
+<p>Anota todo en <code>validation-log.md</code>, incluido lo que salió mal. Una limitación bien documentada vale más que un éxito sin evidencia.</p>
+
+<section class="sec" id="c-6">
+<h3 class="sec-h"><span class="n">Challenge · 6</span>Evidencia, autoría e IA</h3>
+<p>Puedes usar IA para investigar, programar, redactar o prototipar. Lleva un registro breve de su uso cuando afecte de forma importante tu entrega: qué le pediste, qué usaste y cómo lo verificaste. La pregunta del jurado no será si usaste IA, sino si puedes explicar y responder por el resultado.</p>
+<p>Mantén también tu <b>registro de contribución individual</b> (plantilla en el anexo): qué hiciste cada semana, con enlaces a tus commits, pull requests o documentos. Te servirá directamente en la defensa.</p>
+
+<section class="sec" id="c-7">
+<h3 class="sec-h"><span class="n">Challenge · 7</span>Preparar la defensa individual</h3>
+<p>En el Demo Day el equipo presenta y luego cada persona responde preguntas sobre su parte. Practica estas respuestas:</p>
+<div class="tiles">
+<div class="tile"><div class="ti" data-ic="code"></div><b>Si eres técnico</b><span>¿Qué código escribiste tú? · ¿Por qué este modelo y esta arquitectura? · ¿Qué pasa si la API o el modelo fallan? · ¿Cómo mediste las alucinaciones? · ¿Cuánto cuesta cada consulta?</span></div>
+<div class="tile"><div class="ti" data-ic="search"></div><b>Si eres complementario</b><span>¿Cómo sabes que el problema existe? · ¿Cómo armaste los casos de prueba? · ¿Qué supuesto se cayó? · ¿Qué riesgo ético viste? · ¿Por qué la IA y no otra solución?</span></div>
+</div>
+<p>Y para todos: ¿qué aportaste tú?, ¿qué decisión cambiarías?, ¿qué limitación persiste?</p>
+</section>
+</div>
+
+<div class="diy" id="diy-challenge">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · CHALLENGE</div><h4>Kit de arranque del equipo</h4><p>Deja listo el repositorio, la definición del problema y el conjunto de evaluación antes del primer día del Challenge.</p><div class="meta-row"><span>3 horas</span><span>En equipo de 4</span><span>Pre-Challenge</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Ruta técnica</h5><span class="who">Repositorio y arnés de evaluación</span>
+ <ol>
+  <li>Crea el repositorio con la estructura de Challenge · 3 y una licencia.</li>
+  <li>Protege la rama <code>main</code>: los cambios entran solo por pull request con al menos una revisión.</li>
+  <li>Agrega una plantilla de pull request en <code>.github/pull_request_template.md</code> con: qué cambia, por qué, cómo se probó.</li>
+  <li>Escribe <code>src/tests/evaluar.py</code>, que lee <code>casos.csv</code>, llama a la solución y reporta exactitud, alucinaciones y tiempo.</li>
+  <li>Escribe <code>docs/architecture.md</code> con un diagrama de componentes y flujo de datos.</li>
+  <li>Haz un primer pull request de prueba y que otra persona lo revise.</li>
+ </ol></div>
+ <div class="route c"><h5>Ruta complementaria</h5><span class="who">Problema, actores y casos de prueba</span>
+ <ol>
+  <li>Completa el Opportunity Brief del reto asignado.</li>
+  <li>Dibuja el mapa de actores con sus intereses y riesgos.</li>
+  <li>Escribe los primeros 20 casos de prueba en <code>casos.csv</code>: entrada, respuesta esperada y por qué.</li>
+  <li>Lista los tres supuestos más riesgosos y cómo validarás cada uno.</li>
+  <li>Sube los documentos a <code>/strategy</code> por pull request, igual que el código.</li>
+ </ol></div>
+</div>
+<div class="diy-f">
+ <div><div class="lbl">Entregable</div><p>Repositorio del equipo con estructura, licencia, protección de rama, arnés de evaluación, <code>architecture.md</code>, <code>opportunity-brief.md</code> y los primeros casos de prueba.</p></div>
+ <div><div class="lbl">Lista de verificación</div><ul class="check"><li>Cada integrante tiene al menos un commit revisado.</li><li>El README explica el problema en tres líneas.</li><li>Hay casos de prueba antes de que exista la solución.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">Challenge</span>Lecturas recomendadas</h4>
+<ul class="readings">
+<li><a href="https://git-scm.com/book/es/v2" target="_blank" rel="noopener">Scott Chacon y Ben Straub, <i>Pro Git</i> (en español)</a>. <span class="kind">libro gratuito</span></li>
+<li><a href="https://skills.github.com/" target="_blank" rel="noopener">GitHub Skills</a>. <span class="kind">cursos prácticos</span></li>
+<li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Anthropic, “Building effective agents”</a>. <span class="kind">diseño de soluciones con agentes</span></li>
+</ul>
+</div>

@@ -1,0 +1,154 @@
+<section class="part" id="parte-1"><canvas data-scene="part" data-v="1" aria-hidden="true"></canvas><div class="inner"><div class="num">Module F1</div><h2>AI vision, problem analysis and structured thinking</h2><p>Why AI matters now, where it already is around you, when it fails and how to think through a problem before asking a model for anything.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f1">
+<h3 class="sec-h"><span class="n">F1 · Overview</span>What you will achieve</h3>
+<div class="objectives"><div class="lbl">By the end of F1 you will be able to</div><ul>
+<li>Explain why AI is transforming the global ecosystem and what opportunities it opens.</li>
+<li>Recognize intelligent systems in everyday and industrial processes.</li>
+<li>Break down a problem and tell its symptoms from its causes.</li>
+<li>Identify typical model failures and decide when to use AI and when not to.</li>
+<li>Think like a builder and not just as an AI user.</li>
+</ul><div class="meta-row"><span>5 topics</span><span>Deliverable: decomposition map + reliability assessment</span></div></div>
+<div class="topicmap"><a href="#f1-1"><b>F1.1</b>Why AI and why now</a><a href="#f1-2"><b>F1.2</b>Intelligent systems around you</a><a href="#f1-3"><b>F1.3</b>Limits and failures</a><a href="#f1-4"><b>F1.4</b>Root cause</a><a href="#f1-5"><b>F1.5</b>The builder philosophy</a></div>
+
+<section class="sec" id="f1-1">
+<h3 class="sec-h"><span class="n">F1.1</span>Why AI and why now</h3>
+<p>Artificial intelligence is not new: the term was coined in 1956 and for decades it advanced in leaps, with periods of enthusiasm and “winters” of little funding. What changed in recent years was the combination of three ingredients that finally arrived together:</p>
+<ul>
+<li><b>Data:</b> the internet produced huge amounts of text, images and code to train models on.</li>
+<li><b>Compute:</b> graphics processors (GPUs), designed for video games, turned out to be ideal for the math neural networks need.</li>
+<li><b>Algorithms:</b> in 2017 the Transformer architecture appeared, making it possible to train much larger models; it is the basis of today's language models.</li>
+</ul>
+<p>That inflection point means tasks that used to need a team of specialists, such as summarizing documents, classifying requests, translating or writing code, can now be prototyped in days. The opportunity is not only in creating new models, but in <b>applying well</b> the ones that already exist to concrete problems of institutions, businesses and people.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Data + compute + algorithms: the three explain the recent leap.</li>
+<li>Most of the value is in application, not in training models from scratch.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>Which process in your work or community depends today on reading, classifying or summarizing a lot of information by hand?</div>
+
+<section class="sec" id="f1-2">
+<h3 class="sec-h"><span class="n">F1.2</span>Recognizing intelligent systems around you</h3>
+<p>You already use AI every day, even if you don't call it that. Learning to see it helps you imagine where else it could help:</p>
+<ul>
+<li><b>Recommendation:</b> what social networks, online stores and video platforms show you.</li>
+<li><b>Classification:</b> the spam filter, card fraud detection, support ticket prioritization.</li>
+<li><b>Perception:</b> face unlock, license plate recognition, the text your phone reads in a photo.</li>
+<li><b>Language:</b> conversational assistants, machine translation, voice dictation.</li>
+<li><b>Prediction:</b> inventory demand, machine maintenance, arrival times.</li>
+</ul>
+<p>For each system you can ask three questions: what goes in (data)?, what comes out (a decision, a number, a text)? and who checks if it is wrong?</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Almost every AI system does one of five things: recommend, classify, perceive, generate language or predict.</li>
+<li>Input, output and oversight: that is enough to describe any system.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>Pick a system you used today. What would happen if it got something wrong and nobody noticed?</div>
+
+<section class="sec" id="f1-3">
+<h3 class="sec-h"><span class="n">F1.3</span>Diagnosing model limits and failures</h3>
+<p>A language model does not “know” things the way a database does. It learned patterns of how text is written and generates the most likely continuation. That is why it can produce fluent, confident answers that are false: this is called a <b>hallucination</b>.</p>
+<p>The most common failures you will meet:</p>
+<ul>
+<li><b>Invented facts:</b> quotes, figures, laws or references that don't exist.</li>
+<li><b>Outdated information:</b> the model only knows what was in its training data.</li>
+<li><b>Calculations and logic:</b> mistakes in multi-step operations if it doesn't use a tool.</li>
+<li><b>Bias:</b> answers that reflect imbalances in the data it was trained on.</li>
+<li><b>Prompt sensitivity:</b> the same question in other words can get a different answer.</li>
+</ul>
+<p>When <b>not</b> to use AI? When the cost of an error is high and nobody reviews it, when a simple rule solves the problem, when there is no quality data or when the decision requires legal responsibility that nobody can delegate.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Fluency is not accuracy: always verify what matters.</li>
+<li>A good design decision can be “no AI here”.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>What error rate would you accept in a system that sorts emails? And in one that suggests medical diagnoses?</div>
+
+<section class="sec" id="f1-4">
+<h3 class="sec-h"><span class="n">F1.4</span>Analytical decomposition and root cause</h3>
+<p>Many AI projects fail because they solve a symptom. “Citizens complain that the procedure takes too long” is a symptom; the cause could be a confusing form, documents requested twice or a bottleneck in a single person who reviews everything. AI helps with some of those causes and not with others.</p>
+<p>Two simple tools:</p>
+<ul>
+<li><b>The five whys:</b> ask “why?” about the problem and then about each answer, until you reach something that can be changed.</li>
+<li><b>Problem tree:</b> the central problem in the trunk, causes in the roots and effects in the branches. Each cause becomes a possible line of solution.</li>
+</ul>
+<p>In the end you should be able to write the problem in one sentence with <b>who</b> experiences it, <b>what</b> happens, <b>how much</b> it costs (in time, money or quality) and <b>why</b> it happens.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Symptom: what you see. Cause: what, if you change it, makes the symptom go away.</li>
+<li>Problem first, technology second.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>Take a problem you know well. Which of its causes would a good AI system solve, and which would it not?</div>
+
+<section class="sec" id="f1-5">
+<h3 class="sec-h"><span class="n">F1.5</span>The builder philosophy</h3>
+<p>Writing good prompts is useful, but it is not the goal of CUBO_ai. A <b>prompt crafter</b> asks a model and copies the answer. A <b>builder</b> understands the whole system: where the data comes from, what tools the model uses, how you measure whether it is right, what happens when it fails and who oversees it.</p>
+<p>The difference shows in the questions you ask yourself:</p>
+<ul>
+<li>Instead of “which prompt do I use?”, “what input, what output and how do I know it's right?”.</li>
+<li>Instead of “it worked in my test”, “in how many cases does it work and in which does it fail?”.</li>
+<li>Instead of “the model said so”, “what source do I check it against?”.</li>
+</ul>
+<p>This way of thinking applies equally to technical and complementary profiles. Whoever defines good test cases and quality criteria is also building.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Builder = system + data + measurement + oversight.</li>
+<li>Quality criteria are part of the product, not paperwork.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>What would have to happen for you to trust an AI assistant to answer your institution's queries without human review?</div>
+
+<section class="sec" id="f1-eval">
+<h3 class="sec-h"><span class="n">F1 · Self-assessment</span>Check what you learned</h3>
+<details class="qa"><summary>What three ingredients explain the recent progress of AI?</summary><p>Large amounts of data, accessible compute (especially GPUs) and better algorithms, especially the Transformer architecture (2017).</p></details>
+<details class="qa"><summary>What is a hallucination?</summary><p>A model response that sounds convincing but is false or unsupported, because the model generates likely text rather than looking up facts.</p></details>
+<details class="qa"><summary>Give two situations where AI is not a good idea.</summary><p>When a simple rule solves the problem; when an error is serious and nobody will review it; when there is no quality data; when the decision requires responsibility that cannot be delegated.</p></details>
+<details class="qa"><summary>How does a symptom differ from a cause?</summary><p>The symptom is what is visible; the cause is what, if corrected, makes the symptom disappear.</p></details>
+<details class="qa"><summary>What sets a builder apart from a prompt crafter?</summary><p>The builder understands and designs the whole system: data, tools, quality measurement, failure handling and oversight, not just the question to the model.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f1">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F1</div><h4>Problem map and reliability test</h4><p>Break down a real operational problem and measure how reliable a language model would be in helping to solve it. Produces the F1 deliverable.</p><div class="meta-row"><span>3 hours</span><span>Individual or in pairs</span><span>Technical: Docker + Ollama</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Technical route</h5><span class="who">Measure the hallucination rate of a local model</span>
+ <ol>
+  <li>Create a <code>cuboai-f1</code> repository on GitHub and clone it.</li>
+  <li>Start Ollama in Docker and download a small model:
+<pre><code>docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+docker exec -it ollama ollama pull llama3.2:1b
+docker exec -it ollama ollama run llama3.2:1b "What is the capital of El Salvador?"</code></pre></li>
+  <li>Choose an operational problem and write in <code>questions.csv</code> ten questions on its topic whose correct answer you know, with columns <code>question,correct_answer</code>.</li>
+  <li>Write <code>test_model.py</code>, which sends each question to the local API and saves the answer:
+<pre><code>import csv, requests
+URL = "http://localhost:11434/api/chat"
+with open("questions.csv") as f, open("results.csv", "w", newline="") as out:
+    w = csv.writer(out); w.writerow(["question", "expected", "model"])
+    for row in csv.DictReader(f):
+        r = requests.post(URL, json={"model": "llama3.2:1b", "stream": False,
+            "messages": [{"role": "user", "content": row["question"]}]})
+        w.writerow([row["question"], row["correct_answer"],
+                    r.json()["message"]["content"]])</code></pre></li>
+  <li>Review <code>results.csv</code> and mark each answer as correct, incomplete or hallucinated. Calculate the percentage of each.</li>
+  <li>In the README, draw the problem tree with a Mermaid diagram and write where you would and would not use the model, with your percentages as evidence.</li>
+ </ol></div>
+ <div class="route c"><h5>Complementary route</h5><span class="who">Problem tree and reliability matrix</span>
+ <ol>
+  <li>Choose a real operational problem from an institution, business or community you know.</li>
+  <li>Apply the five whys and draw the problem tree: central problem, causes and effects.</li>
+  <li>For each cause, fill in a table: does AI help? (yes, partly, no), what would it do?, what happens if it is wrong?, who would review it?</li>
+  <li>Test an AI assistant with ten questions on the topic whose answer you know. Record how many it gets right, how many are incomplete and how many it invents.</li>
+  <li>Write a one-page conclusion: where the model is reliable, where it is not and what human control you would add.</li>
+ </ol></div>
+</div>
+{{SHOTS_F1}}
+<div class="diy-f">
+ <div><div class="lbl">Deliverable</div><p>An analytical decomposition map of the problem (tree or diagram) and an assessment of the reliability limits of a possible AI solution, backed by your ten-question test.</p></div>
+ <div><div class="lbl">Checklist</div><ul class="check"><li>The problem is written with who, what, how much and why.</li><li>You separated symptoms from causes.</li><li>You have percentages of correct answers and hallucinations, not impressions.</li><li>You said clearly where you would not use AI.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F1</span>Recommended readings</h4>
+<ul class="readings">
+<li><a href="https://www.elementsofai.com/" target="_blank" rel="noopener">University of Helsinki and MinnaLearn, <i>Elements of AI</i></a>. <span class="kind">free introductory course</span></li>
+<li><a href="https://hai.stanford.edu/ai-index" target="_blank" rel="noopener">Stanford HAI, <i>AI Index Report</i></a>. <span class="kind">annual report · sector data</span></li>
+<li><a href="https://www.coursera.org/learn/ai-for-everyone" target="_blank" rel="noopener">Andrew Ng, <i>AI For Everyone</i></a>. <span class="kind">course · for non-technical audiences</span></li>
+<li><a href="https://ollama.com/" target="_blank" rel="noopener">Ollama: open models on your computer</a>. <span class="kind">tool · documentation</span></li>
+</ul>
+</div>

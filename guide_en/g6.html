@@ -1,0 +1,114 @@
+<section class="part" id="parte-6"><canvas data-scene="part" data-v="6" aria-hidden="true"></canvas><div class="inner"><div class="num">Preparation</div><h2>Heading to The AI Challenge</h2><p>Three weeks in a team to take a real problem to an AI solution you can demonstrate and defend.</p></div></section>
+
+<div class="col">
+<section class="sec" id="c-1">
+<h3 class="sec-h"><span class="n">Challenge · 1</span>How the Challenge works</h3>
+<p>The AI Challenge lasts three consecutive weeks. You will work in a team of four, two technical and two complementary profiles, on a challenge from the Project Catalog: a RAG assistant, a triage automation, a tutoring platform, a predictive pipeline or another real case.</p>
+<div class="tbl"><table><thead><tr><th>Week</th><th>Focus</th><th>Evaluation gate</th></tr></thead><tbody>
+<tr><td>1</td><td>Detect, understand and scope</td><td>What problem, for whom, why it matters and what AI constraints exist?</td></tr>
+<tr><td>2</td><td>Build and test</td><td>Is there solid evidence of execution, prototyping and validation?</td></tr>
+<tr><td>3</td><td>Finalize, defend and evaluate</td><td>Submission cutoff, Demo Day and individual defense</td></tr>
+</tbody></table></div>
+<p>Your final score is <b>60% team and 40% individual</b>. You advance to the Bootcamp with a final score of at least 70 and an individual score of at least 60, as long as there is capacity.</p>
+<p>Plan for 18 to 25 hours per week: 8 to 10 in program sessions and 10 to 15 of team work. Each team has a technical mentor and a strategic one, with at least one session per week.</p>
+
+<section class="sec" id="c-2">
+<h3 class="sec-h"><span class="n">Challenge · 2</span>Git and GitHub for teams</h3>
+<p>In the Challenge, the repository is your office and your evidence. The whole team works there, including complementary profiles: their documents live in <code>/strategy</code> and their test cases in <code>/src/tests</code> or <code>/strategy</code>, as Markdown or CSV.</p>
+<pre><code>git switch -c feature/mcp-server        <span class="c"># one branch per task</span>
+<span class="c"># ...make changes...</span>
+git add .
+git commit -m "feat: search_documents tool with embeddings"
+git push -u origin feature/mcp-server
+<span class="c"># on GitHub: open a pull request and ask for review</span></code></pre>
+<ul>
+<li><b>Small, descriptive commits:</b> one logical change per commit, with a message that says what and why.</li>
+<li><b>Reviewed pull requests:</b> nobody merges their own work without someone else reading it.</li>
+<li><b>Issues for tasks and decisions:</b> they are recorded and assigned.</li>
+<li><b>Prompts are versioned too:</b> keep them in <code>/src/prompts</code> so the history shows how they evolved.</li>
+</ul>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>The panel reviews the quality and evolution of the work, not the number of commits.</li>
+<li>A bulk upload on the last day counts against your individual evaluation.</li>
+</ul></div>
+
+<section class="sec" id="c-3">
+<h3 class="sec-h"><span class="n">Challenge · 3</span>Repository structure</h3>
+<p>Use this structure as a starting point and adapt it to your project:</p>
+<pre><code>/src        /app · /prompts · /scripts · /tests
+/docs       architecture.md · threat-model.md · setup.md
+/strategy   opportunity-brief.md · user-research.md
+            business-model.md · validation-log.md
+README.md   executive summary and how to run it
+LICENSE     open-source license</code></pre>
+<p>The README is the first thing the panel reads: what problem it solves, for whom, how to install it and what is implemented, simulated or only proposed.</p>
+
+<section class="sec" id="c-4">
+<h3 class="sec-h"><span class="n">Challenge · 4</span>From problem to opportunity</h3>
+<p>The first week decides the rest. Before coding, the team must be able to answer in one minute: what problem is there, who has it, how is it solved today and why AI helps (or why only in part)?</p>
+<p>Write it in the <b>Opportunity Brief</b> (template in the annex) together with a stakeholder map. Technical profiles translate it into requirements, models, APIs and an initial architecture; complementary profiles, into user requirements, a set of test cases and criteria for deciding whether an answer is good.</p>
+<div class="think"><b>Think about it</b>If your solution worked perfectly, which number would change in the user's life?</div>
+
+<section class="sec" id="c-5">
+<h3 class="sec-h"><span class="n">Challenge · 5</span>Evaluating an AI system</h3>
+<p>An AI system is not validated with a demo that went well. It is validated with an <b>evaluation set</b>: cases with the expected answer that run every time something changes.</p>
+<ul>
+<li><b>Accuracy:</b> how many answers are correct?</li>
+<li><b>Hallucinations:</b> how many invent facts or sources?</li>
+<li><b>Correct refusals:</b> does it know how to say “I don't know” or “I can't” when it should?</li>
+<li><b>Bias:</b> does the answer change if you change a personal attribute?</li>
+<li><b>Operations:</b> response time, tokens and cost per query.</li>
+</ul>
+<p>Record everything in <code>validation-log.md</code>, including what went wrong. A well-documented limitation is worth more than a success without evidence.</p>
+
+<section class="sec" id="c-6">
+<h3 class="sec-h"><span class="n">Challenge · 6</span>Evidence, authorship and AI</h3>
+<p>You can use AI to research, code, write or prototype. Keep a short log of its use when it significantly affects your deliverable: what you asked, what you used and how you checked it. The panel's question will not be whether you used AI, but whether you can explain and answer for the result.</p>
+<p>Also keep your <b>individual contribution log</b> (template in the annex): what you did each week, with links to your commits, pull requests or documents. It will serve you directly in the defense.</p>
+
+<section class="sec" id="c-7">
+<h3 class="sec-h"><span class="n">Challenge · 7</span>Preparing the individual defense</h3>
+<p>On Demo Day the team presents and then each person answers questions about their part. Practice these answers:</p>
+<div class="tiles">
+<div class="tile"><div class="ti" data-ic="code"></div><b>If you are technical</b><span>Which code did you write? · Why this model and this architecture? · What happens if the API or model fails? · How did you measure hallucinations? · How much does each query cost?</span></div>
+<div class="tile"><div class="ti" data-ic="search"></div><b>If you are complementary</b><span>How do you know the problem exists? · How did you build the test cases? · Which assumption fell? · What ethical risk did you see? · Why AI and not another solution?</span></div>
+</div>
+<p>And for everyone: what did you contribute?, which decision would you change?, which limitation remains?</p>
+</section>
+</div>
+
+<div class="diy" id="diy-challenge">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · CHALLENGE</div><h4>Team starter kit</h4><p>Get the repository, the problem definition and the evaluation set ready before the first day of the Challenge.</p><div class="meta-row"><span>3 hours</span><span>Team of 4</span><span>Pre-Challenge</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Technical route</h5><span class="who">Repository and evaluation harness</span>
+ <ol>
+  <li>Create the repository with the Challenge · 3 structure and a license.</li>
+  <li>Protect the <code>main</code> branch: changes only come in through a pull request with at least one review.</li>
+  <li>Add a pull request template in <code>.github/pull_request_template.md</code> with: what changes, why, how it was tested.</li>
+  <li>Write <code>src/tests/evaluate.py</code>, which reads <code>cases.csv</code>, calls the solution and reports accuracy, hallucinations and time.</li>
+  <li>Write <code>docs/architecture.md</code> with a component and data-flow diagram.</li>
+  <li>Make a first test pull request and have someone else review it.</li>
+ </ol></div>
+ <div class="route c"><h5>Complementary route</h5><span class="who">Problem, stakeholders and test cases</span>
+ <ol>
+  <li>Complete the Opportunity Brief for the assigned challenge.</li>
+  <li>Draw the stakeholder map with their interests and risks.</li>
+  <li>Write the first 20 test cases in <code>cases.csv</code>: input, expected answer and why.</li>
+  <li>List the three riskiest assumptions and how you will validate each one.</li>
+  <li>Upload the documents to <code>/strategy</code> via pull request, just like the code.</li>
+ </ol></div>
+</div>
+<div class="diy-f">
+ <div><div class="lbl">Deliverable</div><p>Team repository with structure, license, branch protection, evaluation harness, <code>architecture.md</code>, <code>opportunity-brief.md</code> and the first test cases.</p></div>
+ <div><div class="lbl">Checklist</div><ul class="check"><li>Each member has at least one reviewed commit.</li><li>The README explains the problem in three lines.</li><li>There are test cases before the solution exists.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">Challenge</span>Recommended readings</h4>
+<ul class="readings">
+<li><a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Scott Chacon and Ben Straub, <i>Pro Git</i></a>. <span class="kind">free book</span></li>
+<li><a href="https://skills.github.com/" target="_blank" rel="noopener">GitHub Skills</a>. <span class="kind">hands-on courses</span></li>
+<li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Anthropic, “Building effective agents”</a>. <span class="kind">designing agent solutions</span></li>
+</ul>
+</div>

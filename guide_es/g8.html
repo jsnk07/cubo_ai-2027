@@ -1,0 +1,81 @@
+<section class="part" id="parte-8"><canvas data-scene="part" data-v="8" aria-hidden="true"></canvas><div class="inner"><div class="num">Anexos</div><h2>Plantillas y glosario</h2><p>Formatos listos para copiar a tu repositorio o documento, y los términos que vas a escuchar en clase.</p></div></section>
+
+<div class="col">
+<section class="sec" id="a-1">
+<h3 class="sec-h"><span class="n">Anexo · 1</span>Plantillas</h3>
+<p>Copia cada plantilla a un archivo Markdown de tu repositorio o a un documento con historial de versiones.</p>
+
+<div class="tmpl"><div class="th">Opportunity Brief · strategy/opportunity-brief.md</div><div class="tb">
+<p><b>Problema:</b> qué pasa, en una o dos frases.</p><span class="blank"></span>
+<p><b>Usuario:</b> a quién le pasa, con un ejemplo concreto.</p><span class="blank"></span>
+<p><b>Evidencia:</b> qué datos o testimonios muestran que existe.</p><span class="blank"></span>
+<p><b>Cómo se resuelve hoy:</b> alternativas actuales y sus fallas.</p><span class="blank"></span>
+<p><b>Por qué IA:</b> qué parte del problema resuelve la IA y qué parte no.</p><span class="blank"></span>
+<p><b>Datos disponibles:</b> fuentes, calidad y restricciones de privacidad.</p><span class="blank"></span>
+<p><b>Criterio de éxito:</b> qué número o resultado mostraría que funciona.</p><span class="blank"></span>
+<p><b>Supuestos más riesgosos:</b> los tres que, si fallan, tumban el proyecto.</p><span class="blank"></span>
+</div></div>
+
+<div class="tmpl"><div class="th">Casos de evaluación · src/tests/casos.csv</div><div class="tb">
+<div class="tbl" style="margin:0"><table><thead><tr><th>id</th><th>Entrada</th><th>Respuesta esperada</th><th>Fuente</th><th>Tipo</th></tr></thead><tbody>
+<tr><td>1</td><td>¿Qué documentos pide el trámite X?</td><td>DUI y comprobante de domicilio</td><td>faq-tramite-x.md</td><td>con respuesta</td></tr>
+<tr><td>2</td><td>¿Cuál es mi saldo?</td><td>Negarse: no tiene acceso a datos personales</td><td>—</td><td>negativa</td></tr>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div>
+<p class="note" style="margin-top:8px">Las dos primeras filas son ejemplos inventados. Incluye siempre casos que el sistema debe negarse a responder.</p>
+</div></div>
+
+<div class="tmpl"><div class="th">Matriz de amenazas · docs/threat-model.md</div><div class="tb">
+<div class="tbl" style="margin:0"><table><thead><tr><th>Activo</th><th>Amenaza</th><th class="num">Prob. (1–3)</th><th class="num">Impacto (1–3)</th><th>Mitigación</th></tr></thead><tbody>
+<tr><td>Documentos internos</td><td>Prompt injection oculto en un documento</td><td class="num">2</td><td class="num">3</td><td>Tratar el contenido recuperado como datos, nunca como instrucciones; revisión humana de acciones</td></tr>
+<tr><td>&nbsp;</td><td></td><td class="num"></td><td class="num"></td><td></td></tr>
+<tr><td>&nbsp;</td><td></td><td class="num"></td><td class="num"></td><td></td></tr>
+</tbody></table></div>
+<p class="note" style="margin-top:8px">La primera fila es un ejemplo. Prioriza las amenazas con mayor probabilidad × impacto.</p>
+</div></div>
+
+<div class="tmpl"><div class="th">Bitácora de validación · strategy/validation-log.md</div><div class="tb">
+<div class="tbl" style="margin:0"><table><thead><tr><th>Fecha</th><th>Versión</th><th>Supuesto o cambio</th><th>Prueba</th><th>Resultado</th><th>Decisión</th></tr></thead><tbody>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div></div></div>
+
+<div class="tmpl"><div class="th">Registro de uso de IA · docs/ai-log.md</div><div class="tb">
+<div class="tbl" style="margin:0"><table><thead><tr><th>Fecha</th><th>Herramienta</th><th>Qué le pediste</th><th>Qué usaste</th><th>Cómo lo verificaste</th></tr></thead><tbody>
+<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+</tbody></table></div></div></div>
+
+<div class="tmpl"><div class="th">Registro de contribución individual · docs/contribucion-[nombre].md</div><div class="tb">
+<div class="tbl" style="margin:0"><table><thead><tr><th>Semana</th><th>Qué hice</th><th>Evidencia (enlaces)</th><th>Qué aprendí o decidí</th></tr></thead><tbody>
+<tr><td>1</td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td></tr>
+</tbody></table></div></div></div>
+
+<section class="sec" id="a-2">
+<h3 class="sec-h"><span class="n">Anexo · 2</span>Glosario</h3>
+<div class="gloss">
+ <div><b>Agente</b>Sistema que usa un modelo para decidir pasos y herramientas hasta cumplir una tarea.</div>
+ <div><b>Alucinación</b>Respuesta convincente pero falsa o sin respaldo.</div>
+ <div><b>API</b>Interfaz para que un programa use los servicios de otro.</div>
+ <div><b>Atención</b>Mecanismo del Transformer que pondera qué partes del texto importan.</div>
+ <div><b>Base de datos vectorial</b>Almacén que busca por similitud de significado entre embeddings.</div>
+ <div><b>Chunking</b>Dividir documentos en fragmentos para indexarlos.</div>
+ <div><b>Conjunto de evaluación</b>Casos con respuesta esperada para medir un sistema.</div>
+ <div><b>Docker</b>Herramienta para correr programas en contenedores aislados.</div>
+ <div><b>Embedding</b>Vector numérico que representa el significado de un texto o una imagen.</div>
+ <div><b>Few-shot</b>Incluir pocos ejemplos resueltos en el prompt.</div>
+ <div><b>Human-in-the-loop</b>Punto donde una persona revisa o aprueba antes de que el sistema actúe.</div>
+ <div><b>LLM</b>Modelo de lenguaje de gran escala.</div>
+ <div><b>Matriz de confusión</b>Tabla que muestra qué clases confunde un modelo.</div>
+ <div><b>MCP</b>Model Context Protocol: estándar abierto para conectar modelos con herramientas y datos.</div>
+ <div><b>Ollama</b>Herramienta para correr modelos abiertos en tu computadora con una API local.</div>
+ <div><b>Prompt injection</b>Ataque que esconde instrucciones en los datos para desviar al modelo.</div>
+ <div><b>RAG</b>Generación aumentada por recuperación: responder con documentos recuperados.</div>
+ <div><b>Sobreajuste</b>Cuando un modelo memoriza el entrenamiento y falla con casos nuevos.</div>
+ <div><b>Temperature</b>Parámetro que controla qué tan variada es la salida del modelo.</div>
+ <div><b>Token</b>Fragmento de texto que procesa el modelo; base de su costo y su contexto.</div>
+ <div><b>Transformer</b>Arquitectura de red neuronal en la que se basan los LLMs modernos.</div>
+ <div><b>VibeCoding</b>Programar guiando a una IA con lenguaje natural y revisando lo que produce.</div>
+</div>
+</section>
+
+<div class="endmark"><span class="logo-slot cubo-end"></span>CUBO_ai · Cohorte 2027<br>Agencia Nacional de Inteligencia Artificial (ANIA) · República de El Salvador</div>
+</div>

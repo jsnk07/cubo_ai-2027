@@ -1,0 +1,111 @@
+<section class="part" id="parte-2"><canvas data-scene="part" data-v="2" aria-hidden="true"></canvas><div class="inner"><div class="num">Módulo F2</div><h2>Diseño de instrucciones, verificación y estrategias de uso</h2><p>Cómo pedirle a un modelo lo que necesitas, cómo comprobar lo que te devuelve y cómo usarlo para pensar mejor, no para pensar menos.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f2">
+<h3 class="sec-h"><span class="n">F2 · Panorama</span>Lo que vas a lograr</h3>
+<div class="objectives"><div class="lbl">Al terminar F2 podrás</div><ul>
+<li>Estructurar instrucciones claras y definir de antemano el formato de salida.</li>
+<li>Dirigir y corregir el trabajo de la IA en varias vueltas.</li>
+<li>Verificar las respuestas y detectar sesgos en los datos y en las salidas.</li>
+<li>Usar la IA para generar y comparar ideas de forma estructurada.</li>
+</ul><div class="meta-row"><span>3 temas</span><span>Entregable: repertorio de prompts validados + informe de auditoría</span></div></div>
+<div class="topicmap"><a href="#f2-1"><b>F2.1</b>Formular instrucciones</a><a href="#f2-2"><b>F2.2</b>Auditar respuestas y sesgos</a><a href="#f2-3"><b>F2.3</b>Ideación asistida</a></div>
+
+<section class="sec" id="f2-1">
+<h3 class="sec-h"><span class="n">F2.1</span>Formulación efectiva de instrucciones</h3>
+<p>Un prompt es una especificación. Cuanto más claro sea lo que esperas, menos tiene que adivinar el modelo. Antes de escribirlo, define cómo se verá una buena respuesta: su formato, su extensión y qué no debe incluir.</p>
+<p>Una estructura que funciona en casi todos los casos:</p>
+<ul>
+<li><b>Rol y contexto:</b> para quién es y en qué situación se usará.</li>
+<li><b>Tarea:</b> qué tiene que hacer, con un verbo claro (clasificar, resumir, extraer, comparar).</li>
+<li><b>Datos de entrada:</b> el texto o la información, separada con marcas claras (por ejemplo, entre etiquetas o comillas triples).</li>
+<li><b>Formato de salida:</b> lista, tabla, JSON con campos definidos, número de palabras.</li>
+<li><b>Ejemplos:</b> uno o dos casos resueltos (few-shot) cuando el formato o el criterio no son obvios.</li>
+<li><b>Restricciones:</b> qué hacer si no sabe (“responde <i>no encontrado</i>”), qué no inventar.</li>
+</ul>
+<p>Rara vez el primer prompt es el bueno. Trabaja en vueltas: prueba, mira dónde falla, ajusta una cosa a la vez y vuelve a probar con los mismos casos. Así sabes qué cambio mejoró el resultado.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Define el resultado antes de escribir el prompt.</li>
+<li>Cambia una cosa a la vez y prueba siempre con el mismo conjunto de casos.</li>
+<li>Dale al modelo una salida honesta para cuando no sabe.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué instrucción le darías a una persona nueva en tu trabajo para que haga bien una tarea el primer día? ¿Qué le falta a tu prompt comparado con eso?</div>
+
+<section class="sec" id="f2-2">
+<h3 class="sec-h"><span class="n">F2.2</span>Auditoría de respuestas y detección de sesgos</h3>
+<p>Verificar no es releer la respuesta y ver si “suena bien”. Es compararla con algo que sabes que es cierto. Algunas técnicas prácticas:</p>
+<ul>
+<li><b>Respuestas de referencia:</b> prepara casos con la respuesta correcta conocida y mide cuántos acierta el modelo.</li>
+<li><b>Fuentes:</b> pide que cite de dónde saca cada dato y comprueba que la fuente exista y diga eso.</li>
+<li><b>Consistencia:</b> haz la misma pregunta de varias formas o varias veces; si cambia la respuesta, desconfía.</li>
+<li><b>Pruebas contrafactuales de sesgo:</b> cambia solo un atributo (nombre, género, zona de residencia) y observa si cambia la decisión del modelo.</li>
+</ul>
+<p>El sesgo puede venir de los datos de entrenamiento del modelo, de los datos que tú le das o de la forma en que formulas la tarea. Por eso la auditoría revisa las tres cosas.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Sin casos de referencia no hay forma de medir la calidad.</li>
+<li>Cambiar un solo atributo es la prueba más simple y reveladora de sesgo.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>Si un asistente evalúa solicitudes de becas, ¿qué atributo cambiarías primero para probar si es justo?</div>
+
+<section class="sec" id="f2-3">
+<h3 class="sec-h"><span class="n">F2.3</span>Metodologías de ideación asistida</h3>
+<p>La IA es muy buena para generar muchas opciones rápido y mala para elegir la correcta por ti. Úsala en las fases donde la cantidad ayuda y tú decides en las que importa el criterio:</p>
+<ol>
+<li><b>Divergir:</b> pide 20 ideas, enfoques distintos o perspectivas de varios actores (usuario, operador, regulador).</li>
+<li><b>Agrupar:</b> pide que organice las ideas por tema o por tipo de solución.</li>
+<li><b>Criticar:</b> pide los argumentos en contra de cada idea, o que actúe como un evaluador escéptico.</li>
+<li><b>Decidir:</b> elige tú, con criterios explícitos como impacto, factibilidad y riesgo.</li>
+</ol>
+<p>Registra qué ideas vinieron de la IA y cuáles del equipo. En la defensa te preguntarán por qué elegiste un camino, y “lo sugirió el modelo” no es una razón.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Divergir con IA, decidir con criterios humanos.</li>
+<li>Pedir críticas es tan útil como pedir ideas.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué criterio usarías para descartar una idea que el modelo presenta como excelente?</div>
+
+<section class="sec" id="f2-eval">
+<h3 class="sec-h"><span class="n">F2 · Autoevaluación</span>Comprueba lo que aprendiste</h3>
+<details class="qa"><summary>Nombra cuatro partes de un prompt bien estructurado.</summary><p>Rol y contexto, tarea, datos de entrada delimitados, formato de salida, ejemplos y restricciones (cualquiera cuatro).</p></details>
+<details class="qa"><summary>¿Por qué conviene cambiar una sola cosa a la vez al mejorar un prompt?</summary><p>Porque así sabes qué cambio causó la mejora o el empeoramiento al comparar con los mismos casos.</p></details>
+<details class="qa"><summary>¿Qué es una prueba contrafactual de sesgo?</summary><p>Repetir la misma entrada cambiando solo un atributo, como el nombre o el género, para ver si cambia la decisión del modelo.</p></details>
+<details class="qa"><summary>¿Qué es few-shot?</summary><p>Incluir en el prompt uno o pocos ejemplos resueltos para mostrar al modelo el formato o el criterio esperado.</p></details>
+<details class="qa"><summary>En una sesión de ideación, ¿qué parte no debes delegar en la IA?</summary><p>La decisión final, que debe basarse en criterios explícitos del equipo.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f2">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F2</div><h4>Laboratorio de prompts con evidencia</h4><p>Diseña un repertorio de prompts para una tarea real, pruébalo con casos de referencia y audita si hay sesgo. Produce el entregable de F2.</p><div class="meta-row"><span>3–4 horas</span><span>Individual o en pareja</span><span>Técnica: Docker + Ollama</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Ruta técnica</h5><span class="who">Evalúa variantes de prompt con un script</span>
+ <ol>
+  <li>Elige una tarea de clasificación, por ejemplo, ordenar consultas ciudadanas en <i>trámite</i>, <i>queja</i>, <i>información</i> u <i>otro</i>.</li>
+  <li>Escribe 20 casos en <code>casos.csv</code> con la etiqueta correcta. Usa textos inventados, sin datos personales.</li>
+  <li>Escribe tres versiones del prompt en <code>prompts/v1.txt</code>, <code>v2.txt</code> y <code>v3.txt</code>: una básica, una con formato de salida fijo y una con dos ejemplos (few-shot).</li>
+  <li>Con el modelo de F1 en Ollama, escribe <code>evaluar.py</code>: para cada versión y cada caso, pide la etiqueta con <code>"options": {"temperature": 0}</code> y compárala con la correcta. Imprime la exactitud de cada versión.</li>
+  <li>Prueba de sesgo: toma cinco casos, cambia solo el nombre o el género de quien escribe y comprueba si cambia la etiqueta.</li>
+  <li>Haz commit de cada versión del prompt para que el historial muestre cómo mejoraste.</li>
+ </ol></div>
+ <div class="route c"><h5>Ruta complementaria</h5><span class="who">Repertorio de prompts y rúbrica de calidad</span>
+ <ol>
+  <li>Elige tres tareas de tu disciplina: por ejemplo, resumir un informe, redactar una respuesta a un usuario y extraer datos de un documento.</li>
+  <li>Para cada tarea, escribe el prompt con la estructura de F2.1 y define una rúbrica de 1 a 3 en exactitud, formato y tono.</li>
+  <li>Prueba cada prompt con cinco entradas distintas en un asistente de IA y califica cada respuesta con tu rúbrica.</li>
+  <li>Mejora el prompt que peor puntuó y vuelve a probarlo con las mismas cinco entradas.</li>
+  <li>Audita un caso: cambia un atributo personal en la entrada y documenta si cambió la respuesta.</li>
+ </ol></div>
+</div>
+<div class="diy-f">
+ <div><div class="lbl">Entregable</div><p>Repertorio de prompts validados (con su versión final, su propósito y su puntuación) y un informe de auditoría de una o dos páginas sobre la exactitud y el sesgo observados en el caso de estudio.</p></div>
+ <div><div class="lbl">Lista de verificación</div><ul class="check"><li>Cada prompt tiene casos de prueba y un resultado medido.</li><li>Puedes mostrar la versión anterior y explicar qué cambió.</li><li>La prueba de sesgo cambia un solo atributo.</li><li>No usaste datos personales reales.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F2</span>Lecturas recomendadas</h4>
+<ul class="readings">
+<li><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener">Anthropic, guía de ingeniería de prompts</a>. <span class="kind">documentación</span></li>
+<li><a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noopener">OpenAI, <i>Prompt engineering</i></a>. <span class="kind">documentación</span></li>
+<li><a href="https://learnprompting.org/" target="_blank" rel="noopener">Learn Prompting</a>. <span class="kind">curso abierto</span></li>
+<li><a href="https://docs.ollama.com/" target="_blank" rel="noopener">Documentación de Ollama y su API</a>. <span class="kind">referencia técnica</span></li>
+</ul>
+</div>

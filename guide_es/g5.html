@@ -1,0 +1,173 @@
+<section class="part" id="parte-5"><canvas data-scene="part" data-v="5" aria-hidden="true"></canvas><div class="inner"><div class="num">Módulo F5</div><h2>Modelos de lenguaje, agentes, protocolo MCP e infraestructura</h2><p>Cómo funciona un LLM por dentro, cómo se le conectan documentos y herramientas, y cuánto cuesta y quién controla la infraestructura que lo hace correr.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f5">
+<h3 class="sec-h"><span class="n">F5 · Panorama</span>Lo que vas a lograr</h3>
+<div class="objectives"><div class="lbl">Al terminar F5 podrás</div><ul>
+<li>Explicar cómo funciona un LLM, sus capacidades y sus límites.</li>
+<li>Construir aplicaciones con recuperación de documentos (RAG) y agentes.</li>
+<li>Implementar un servidor MCP que conecte un modelo con herramientas y datos.</li>
+<li>Diseñar soluciones confiables y escalables con pensamiento sistémico.</li>
+<li>Analizar costos de cómputo, consumo y soberanía tecnológica.</li>
+</ul><div class="meta-row"><span>5 temas</span><span>Entregable: agente con RAG y servidor MCP + arquitectura + costos</span></div></div>
+<div class="topicmap"><a href="#f5-1"><b>F5.1</b>Cómo funciona un LLM</a><a href="#f5-2"><b>F5.2</b>RAG y agentes</a><a href="#f5-3"><b>F5.3</b>Protocolo MCP</a><a href="#f5-4"><b>F5.4</b>Pensamiento sistémico</a><a href="#f5-5"><b>F5.5</b>Infraestructura e IA soberana</a></div>
+
+<section class="sec" id="f5-1">
+<h3 class="sec-h"><span class="n">F5.1</span>Comprensión de los modelos de lenguaje (LLMs)</h3>
+<p>Un LLM es una red neuronal entrenada para una tarea simple: predecir el siguiente fragmento de texto. El texto se divide en <b>tokens</b> (trozos de palabra), cada token se convierte en un vector de números y la arquitectura Transformer usa un mecanismo de <b>atención</b> para decidir qué partes del texto anterior importan para predecir la siguiente.</p>
+<p>Entrenado con cantidades enormes de texto y luego ajustado para seguir instrucciones, ese predictor aprende a resumir, traducir, razonar paso a paso y escribir código. Pero conserva sus límites:</p>
+<ul>
+<li><b>Ventana de contexto:</b> solo “ve” una cantidad limitada de tokens a la vez.</li>
+<li><b>Conocimiento congelado:</b> no sabe lo que pasó después de su entrenamiento ni lo que hay en tus documentos.</li>
+<li><b>No determinista:</b> con <i>temperature</i> alta, la misma pregunta puede dar respuestas distintas.</li>
+<li><b>Costo por token:</b> cada token de entrada y de salida consume cómputo y, en servicios de pago, dinero.</li>
+</ul>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Tokens → vectores → atención → siguiente token.</li>
+<li>Para que sepa de tus datos, hay que dárselos en el contexto (RAG) o con herramientas.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>Si un modelo tiene una ventana de 8,000 tokens y tu manual tiene 300 páginas, ¿cómo le darías la información que necesita?</div>
+
+<section class="sec" id="f5-2">
+<h3 class="sec-h"><span class="n">F5.2</span>Sistemas RAG y agentes</h3>
+<p><b>RAG</b> (generación aumentada por recuperación) responde con tus documentos en tres pasos:</p>
+<ol>
+<li><b>Indexar:</b> divides los documentos en fragmentos (chunking) y conviertes cada uno en un <b>embedding</b>, un vector que representa su significado. Los guardas en una base de datos vectorial.</li>
+<li><b>Recuperar:</b> conviertes la pregunta en embedding y buscas los fragmentos más parecidos.</li>
+<li><b>Generar:</b> le das al modelo la pregunta junto con esos fragmentos y le pides que responda solo con ellos y que cite de dónde salió cada dato.</li>
+</ol>
+<p>Un <b>agente</b> va un paso más allá: el modelo decide qué herramientas usar y en qué orden (buscar en documentos, consultar una API, hacer un cálculo) y repite hasta cumplir la tarea. Más autonomía significa más capacidad y también más riesgo, por eso los agentes necesitan límites claros y supervisión (F3.3).</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>RAG = indexar, recuperar, generar con citas.</li>
+<li>Agente = modelo que elige herramientas en un ciclo hasta terminar.</li>
+<li>La calidad de un RAG depende sobre todo de la recuperación.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>Si el RAG responde mal, ¿cómo sabes si falló la búsqueda de fragmentos o la generación de la respuesta?</div>
+
+<section class="sec" id="f5-3">
+<h3 class="sec-h"><span class="n">F5.3</span>Protocolo de contexto de modelos (MCP) y habilidades</h3>
+<p>Cada aplicación que conecta un modelo con una herramienta solía escribir su propia integración. El <b>Model Context Protocol (MCP)</b> es un estándar abierto que resuelve eso: un <b>servidor MCP</b> expone herramientas, recursos y plantillas de prompts, y cualquier <b>cliente MCP</b> compatible puede usarlos sin código adicional.</p>
+<ul>
+<li><b>Herramientas (tools):</b> funciones que el modelo puede pedir ejecutar, como <code>buscar_documentos</code> o <code>crear_ticket</code>.</li>
+<li><b>Recursos (resources):</b> datos que el cliente puede leer, como un archivo o un registro.</li>
+<li><b>Prompts:</b> plantillas reutilizables que el servidor ofrece.</li>
+</ul>
+<p>El servidor controla a qué datos se accede y con qué permisos: el modelo nunca toca directamente tu base de datos, solo pide que se ejecute una herramienta definida. Las <b>habilidades</b> (skills) son paquetes de instrucciones y recursos que le enseñan a un asistente a hacer una tarea específica de forma consistente.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>MCP separa al modelo de las herramientas con un contrato estándar.</li>
+<li>El servidor define qué puede hacerse y con qué permisos.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué herramienta de tu institución expondrías primero como servidor MCP y qué permisos le darías?</div>
+
+<section class="sec" id="f5-4">
+<h3 class="sec-h"><span class="n">F5.4</span>Pensamiento sistémico y escalabilidad</h3>
+<p>Un prototipo que funciona en tu computadora no es todavía un sistema. Para que sea confiable en producción hay que pensar en sus partes y en cómo fallan:</p>
+<ul>
+<li><b>Componentes:</b> interfaz, orquestación, modelo, recuperación, herramientas, almacenamiento, registros.</li>
+<li><b>Fallos:</b> ¿qué pasa si el modelo no responde, tarda demasiado o devuelve basura? Reintentos, tiempos de espera, respuestas de respaldo.</li>
+<li><b>Evaluación continua:</b> un conjunto fijo de preguntas con respuesta conocida que se corre cada vez que cambias algo.</li>
+<li><b>Observabilidad:</b> registrar entradas, salidas, latencia, tokens y errores para entender qué pasa.</li>
+<li><b>Escala:</b> cuántos usuarios a la vez, cuánta latencia aceptable, cuánto cuesta por consulta.</li>
+</ul>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Diagrama primero: componentes, flujos de datos y puntos de fallo.</li>
+<li>Sin un conjunto de evaluación fijo no sabes si un cambio mejoró o empeoró.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>Si tu asistente pasa de 10 a 10,000 usuarios al día, ¿qué parte del sistema se rompe primero?</div>
+
+<section class="sec" id="f5-5">
+<h3 class="sec-h"><span class="n">F5.5</span>Infraestructura, economía del cómputo e IA soberana</h3>
+<p>Detrás de cada respuesta hay hardware: GPUs en un centro de datos o en tu computadora, electricidad y refrigeración. Elegir dónde corre un modelo es una decisión técnica, económica y estratégica.</p>
+</div>
+<div class="tbl wide"><table>
+<thead><tr><th>Opción</th><th>Ventajas</th><th>Desventajas</th></tr></thead>
+<tbody>
+<tr><td>API de un proveedor en la nube</td><td>Modelos más capaces, sin hardware propio, se paga por uso</td><td>Los datos salen de la institución, costo variable, dependencia del proveedor</td></tr>
+<tr><td>Modelo abierto en servidores propios o nacionales</td><td>Control de los datos, costo predecible, capacidad local</td><td>Inversión en hardware y personal, modelos a veces menos capaces</td></tr>
+<tr><td>Modelo pequeño en el dispositivo</td><td>Privacidad total, funciona sin internet</td><td>Capacidad limitada, depende del equipo del usuario</td></tr>
+</tbody></table></div>
+<div class="col">
+<p>La <b>IA soberana</b> es la capacidad de un país o institución de desarrollar, operar y gobernar sistemas de IA con infraestructura, datos y talento bajo su control. No significa evitar todo servicio externo, sino poder elegir y tener alternativas.</p>
+<p>Para comparar opciones, calcula el <b>costo por consulta</b>: tokens de entrada y salida por consulta × precio por token (o costo del hardware y la energía repartido entre las consultas).</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Dónde corre el modelo decide costo, privacidad y control.</li>
+<li>Soberanía es poder elegir, no aislarse.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué servicios públicos deberían correr sobre infraestructura nacional y cuáles podrían usar servicios externos?</div>
+
+<section class="sec" id="f5-eval">
+<h3 class="sec-h"><span class="n">F5 · Autoevaluación</span>Comprueba lo que aprendiste</h3>
+<details class="qa"><summary>¿Qué es un token y por qué importa?</summary><p>Un fragmento de texto que el modelo procesa. Determina cuánto cabe en la ventana de contexto y cuánto cuesta cada consulta.</p></details>
+<details class="qa"><summary>Describe los tres pasos de un sistema RAG.</summary><p>Indexar los documentos en fragmentos con embeddings, recuperar los fragmentos más parecidos a la pregunta y generar la respuesta con esos fragmentos como contexto.</p></details>
+<details class="qa"><summary>¿Qué diferencia a un agente de un simple chat?</summary><p>El agente decide qué herramientas usar y en qué orden, en un ciclo, hasta cumplir una tarea.</p></details>
+<details class="qa"><summary>¿Qué expone un servidor MCP?</summary><p>Herramientas, recursos y prompts que cualquier cliente MCP compatible puede usar.</p></details>
+<details class="qa"><summary>¿Cómo calculas el costo por consulta de un modelo en la nube?</summary><p>Tokens de entrada y de salida por consulta multiplicados por el precio por token de cada tipo.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f5">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F5</div><h4>Tu primer agente con RAG y MCP</h4><p>Conecta un modelo local a tus propios documentos mediante un servidor MCP, mide su calidad y calcula lo que costaría operarlo. Produce el entregable de F5.</p><div class="meta-row"><span>4–5 horas</span><span>En pareja recomendado</span><span>Técnica: Docker + Ollama + MCP</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Ruta técnica</h5><span class="who">Servidor MCP con búsqueda semántica y un agente que lo usa</span>
+ <ol>
+  <li>Con Ollama corriendo (F1), descarga un modelo de embeddings e instala las librerías:
+<pre><code>docker exec -it ollama ollama pull nomic-embed-text
+pip install "mcp[cli]&gt;=2" numpy requests</code></pre></li>
+  <li>Pon de cinco a diez documentos cortos en Markdown en la carpeta <code>docs/</code> (por ejemplo, preguntas frecuentes de un servicio público).</li>
+  <li>Escribe <code>server.py</code>:
+<pre><code>from pathlib import Path
+import numpy as np, requests
+from mcp.server.mcpserver import MCPServer
+
+API = "http://localhost:11434/api"
+mcp = MCPServer("documentos")
+docs = {p.name: p.read_text() for p in Path("docs").glob("*.md")}
+
+def embed(textos):
+    r = requests.post(f"{API}/embed", json={"model": "nomic-embed-text", "input": textos})
+    return np.array(r.json()["embeddings"])
+
+E = embed(list(docs.values()))
+
+@mcp.tool()
+def buscar_documentos(pregunta: str, k: int = 3) -> list[dict]:
+    """Devuelve los documentos más relevantes para la pregunta."""
+    q = embed([pregunta])[0]
+    s = E @ q / (np.linalg.norm(E, axis=1) * np.linalg.norm(q))
+    nombres = list(docs)
+    return [{"fuente": nombres[i], "texto": docs[nombres[i]]} for i in s.argsort()[::-1][:k]]
+
+if __name__ == "__main__":
+    mcp.run()</code></pre>
+<p class="note">El código usa la versión 2 del SDK de Python de MCP. En la versión 1 la clase se llamaba <code>FastMCP</code> y se importaba de <code>mcp.server.fastmcp</code>.</p></li>
+  <li>Pruébalo con el MCP Inspector, que corre con Node.js: <code>npx @modelcontextprotocol/inspector python server.py</code>. En la pestaña <b>Tools</b>, ejecuta <code>buscar_documentos</code> con una pregunta.</li>
+  <li>Escribe <code>agente.py</code>: recibe una pregunta, llama a la herramienta, arma un prompt con los fragmentos y pide al modelo que responda <b>solo</b> con ellos y cite la fuente. Si no encuentra la respuesta, que diga “no está en los documentos”.</li>
+  <li>Corre 15 preguntas de prueba (10 con respuesta en los documentos y 5 sin ella). Anota aciertos, respuestas inventadas, tokens (<code>prompt_eval_count</code>, <code>eval_count</code>) y segundos por respuesta.</li>
+  <li>Dibuja la arquitectura y calcula el costo por consulta en tu máquina y con el precio publicado de una API en la nube.</li>
+ </ol></div>
+ <div class="route c"><h5>Ruta complementaria</h5><span class="who">Especificación del agente, evaluación y costos</span>
+ <ol>
+  <li>Elige un servicio que podría atender un agente con documentos, por ejemplo, orientación sobre un trámite.</li>
+  <li>Escribe la especificación: usuarios, preguntas que debe resolver, documentos fuente, herramientas MCP que necesitaría y acciones que <b>no</b> puede hacer sin aprobación humana.</li>
+  <li>Construye el conjunto de evaluación: 20 preguntas con su respuesta correcta y su fuente, incluidas 5 que el agente debe negarse a responder.</li>
+  <li>Pruébalo con un asistente de IA al que le adjuntes los documentos y califica cada respuesta: correcta con cita, correcta sin cita, inventada o negativa adecuada.</li>
+  <li>Haz la hoja de costos: consultas al mes, tokens por consulta y precio publicado de dos opciones (API en la nube y modelo abierto en servidor propio). Agrega una columna de soberanía y riesgo.</li>
+ </ol></div>
+</div>
+{{SHOTS_F5}}
+<div class="diy-f">
+ <div><div class="lbl">Entregable</div><p>Prototipo de un agente con RAG y un servidor MCP integrado (ruta técnica) o la especificación completa con su conjunto de evaluación (ruta complementaria), en ambos casos con un esquema de arquitectura y una evaluación de costos de infraestructura.</p></div>
+ <div><div class="lbl">Lista de verificación</div><ul class="check"><li>Las respuestas citan su fuente.</li><li>El agente sabe decir “no está en los documentos”.</li><li>Tienes métricas: aciertos, inventadas, tiempo y tokens.</li><li>El costo por consulta está calculado, no estimado a ojo.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F5</span>Lecturas recomendadas</h4>
+<ul class="readings">
+<li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Vaswani et al., “Attention Is All You Need” (2017)</a>. <span class="kind">artículo · arquitectura Transformer</span></li>
+<li><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener">Lewis et al., “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” (2020)</a>. <span class="kind">artículo · RAG</span></li>
+<li><a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener">Model Context Protocol: documentación oficial</a>. <span class="kind">especificación y guías</span></li>
+<li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Anthropic, “Building effective agents”</a>. <span class="kind">guía de diseño de agentes</span></li>
+<li><a href="https://huggingface.co/learn/llm-course" target="_blank" rel="noopener">Hugging Face, curso de LLMs</a>. <span class="kind">curso gratuito</span></li>
+</ul>
+</div>

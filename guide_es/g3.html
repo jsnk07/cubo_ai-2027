@@ -1,0 +1,116 @@
+<section class="part" id="parte-3"><canvas data-scene="part" data-v="3" aria-hidden="true"></canvas><div class="inner"><div class="num">Módulo F3</div><h2>Ética, protección de datos y políticas de uso responsable</h2><p>Qué responsabilidad tiene quien construye con IA, cómo cuidar la información de las personas y dónde poner a un humano antes de que el sistema actúe.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f3">
+<h3 class="sec-h"><span class="n">F3 · Panorama</span>Lo que vas a lograr</h3>
+<div class="objectives"><div class="lbl">Al terminar F3 podrás</div><ul>
+<li>Analizar dilemas éticos, de privacidad y de dependencia tecnológica en un proyecto de IA.</li>
+<li>Manejar con seguridad datos sensibles y confidenciales.</li>
+<li>Diseñar una mini-política de uso responsable de IA para un equipo.</li>
+<li>Definir puntos de supervisión humana y trazabilidad en un flujo con IA.</li>
+</ul><div class="meta-row"><span>3 temas</span><span>Entregable: protocolo de supervisión humana + matriz de auditoría de datos</span></div></div>
+<div class="topicmap"><a href="#f3-1"><b>F3.1</b>Ética y dependencia</a><a href="#f3-2"><b>F3.2</b>Información confidencial</a><a href="#f3-3"><b>F3.3</b>Supervisión humana</a></div>
+
+<section class="sec" id="f3-1">
+<h3 class="sec-h"><span class="n">F3.1</span>Ética, responsabilidad y dependencia tecnológica</h3>
+<p>Un sistema de IA toma decisiones o influye en ellas a una escala que ninguna persona alcanza. Si tiene un sesgo, lo repite miles de veces. Por eso la ética no es un capítulo aparte del proyecto: está en cada decisión de diseño.</p>
+<p>Cuatro preguntas que deberías poder responder sobre cualquier sistema que construyas:</p>
+<ul>
+<li><b>Equidad:</b> ¿trata de forma distinta a grupos de personas sin una razón legítima?</li>
+<li><b>Privacidad:</b> ¿usa datos personales que no necesita o que las personas no autorizaron?</li>
+<li><b>Transparencia:</b> ¿saben las personas que interactúan con IA y pueden entender por qué se tomó una decisión?</li>
+<li><b>Responsabilidad:</b> si se equivoca, ¿quién responde y cómo se corrige?</li>
+</ul>
+<p>También existe el riesgo de <b>dependencia</b>: depender de un solo proveedor, de un modelo que puede cambiar sin aviso o de una herramienta que el equipo ya no sabe reemplazar. Diseñar con alternativas y con modelos abiertos cuando es posible reduce ese riesgo; es parte de lo que se llama IA soberana (F5.5).</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Equidad, privacidad, transparencia y responsabilidad: cuatro preguntas para todo sistema.</li>
+<li>La dependencia tecnológica también es un riesgo que se diseña.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>Si tu sistema niega un servicio por error, ¿cómo se entera la persona y a quién puede reclamar?</div>
+
+<section class="sec" id="f3-2">
+<h3 class="sec-h"><span class="n">F3.2</span>Salvaguarda de información confidencial y dilemas morales</h3>
+<p>Antes de mandar un dato a un modelo, pregúntate a dónde va. Si usas un servicio en la nube, el texto sale de tu computadora y queda sujeto a las condiciones de ese proveedor. Si usas un modelo local, como los de Ollama, se queda en tu máquina.</p>
+<p>Buenas prácticas básicas:</p>
+<ul>
+<li><b>Minimiza:</b> envía solo los datos que la tarea necesita.</li>
+<li><b>Anonimiza o seudonimiza:</b> reemplaza nombres, documentos de identidad, teléfonos y correos por marcadores antes de procesar.</li>
+<li><b>Clasifica:</b> público, interno, confidencial y restringido; cada nivel con reglas de qué herramienta puede tocarlo.</li>
+<li><b>Registra:</b> qué datos se usaron, para qué y con qué herramienta.</li>
+<li><b>Cumple la normativa:</b> revisa la ley de protección de datos aplicable y las políticas de tu institución.</li>
+</ul>
+<p>Los dilemas reales rara vez son blanco o negro: un sistema más preciso puede necesitar más datos personales; una respuesta más útil puede exponer información de un tercero. Documentar cómo decidiste es tan importante como la decisión.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Saber a dónde van los datos es la primera decisión de seguridad.</li>
+<li>Minimizar y anonimizar antes de procesar.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué datos de tu trabajo nunca pegarías en un asistente en la nube? ¿Por qué?</div>
+
+<section class="sec" id="f3-3">
+<h3 class="sec-h"><span class="n">F3.3</span>Protocolos de supervisión humana y auditoría</h3>
+<p><b>Human-in-the-loop</b> significa que una persona revisa o aprueba en un punto definido del flujo. No es revisar “cuando haya tiempo”: es un control diseñado, con criterios claros.</p>
+<p>Para diseñarlo, responde:</p>
+<ol>
+<li><b>¿Qué acciones son críticas?</b> Enviar un mensaje a un ciudadano, aprobar un pago, borrar datos, publicar algo.</li>
+<li><b>¿Quién aprueba y con qué información?</b> La persona debe ver la propuesta del sistema y su fundamento, no solo un botón.</li>
+<li><b>¿Qué pasa si rechaza?</b> El caso vuelve a una cola, se corrige o se escala.</li>
+<li><b>¿Qué queda registrado?</b> Entrada, salida del modelo, decisión humana, quién y cuándo. Eso es la trazabilidad.</li>
+</ol>
+<p>Un buen protocolo también define umbrales: por ejemplo, el sistema actúa solo cuando su confianza es alta y el riesgo bajo, y pide revisión en todo lo demás.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>La supervisión humana se diseña en puntos concretos del flujo.</li>
+<li>Sin registro no hay auditoría posible.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>Si el revisor humano aprueba el 99 % sin leer, ¿sigue habiendo supervisión? ¿Cómo lo evitarías?</div>
+
+<section class="sec" id="f3-eval">
+<h3 class="sec-h"><span class="n">F3 · Autoevaluación</span>Comprueba lo que aprendiste</h3>
+<details class="qa"><summary>¿Cuáles son las cuatro preguntas éticas básicas de un sistema de IA?</summary><p>Equidad, privacidad, transparencia y responsabilidad.</p></details>
+<details class="qa"><summary>¿Qué diferencia hay, en privacidad, entre usar un modelo local y uno en la nube?</summary><p>Con el modelo local los datos no salen de tu equipo; con un servicio en la nube viajan al proveedor y quedan sujetos a sus condiciones.</p></details>
+<details class="qa"><summary>¿Qué es seudonimizar?</summary><p>Reemplazar los datos que identifican a una persona por marcadores o códigos, de forma que el texto siga siendo útil sin exponerla.</p></details>
+<details class="qa"><summary>¿Qué debe registrar un flujo con supervisión humana?</summary><p>La entrada, la propuesta del modelo, la decisión humana, quién la tomó y cuándo.</p></details>
+<details class="qa"><summary>¿Por qué la dependencia de un proveedor es un riesgo ético y operativo?</summary><p>Porque el servicio, el modelo o sus condiciones pueden cambiar sin control de la institución, afectando continuidad, costos y datos.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f3">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F3</div><h4>Datos protegidos y un humano en el circuito</h4><p>Toma un flujo de trabajo asistido por IA, protege los datos antes de que lleguen al modelo y define dónde aprueba una persona. Produce el entregable de F3.</p><div class="meta-row"><span>3 horas</span><span>Individual o en pareja</span><span>Técnica: Python + Ollama</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Ruta técnica</h5><span class="who">Filtro de datos personales y punto de aprobación</span>
+ <ol>
+  <li>Crea <code>cuboai-f3</code> con cinco mensajes de ejemplo inventados que incluyan nombres, correos y teléfonos falsos.</li>
+  <li>Escribe <code>redactar.py</code> con expresiones regulares que reemplacen correos y teléfonos por <code>[CORREO]</code> y <code>[TEL]</code>:
+<pre><code>import re
+def redactar(t):
+    t = re.sub(r"[\w.+-]+@[\w-]+\.[\w.]+", "[CORREO]", t)
+    t = re.sub(r"\b\d{4}[- ]?\d{4}\b", "[TEL]", t)
+    return t</code></pre></li>
+  <li>Manda el texto ya redactado a tu modelo local para que proponga una respuesta.</li>
+  <li>Antes de “enviar”, muestra la propuesta y pide aprobación con <code>input("¿Aprobar? (s/n) ")</code>. Si es no, el caso queda pendiente.</li>
+  <li>Guarda cada decisión en <code>auditoria.jsonl</code>: hora, texto redactado, propuesta, decisión y revisor.</li>
+  <li>Documenta en el README qué datos personales todavía se escapan de tu filtro (por ejemplo, nombres) y cómo lo resolverías.</li>
+ </ol></div>
+ <div class="route c"><h5>Ruta complementaria</h5><span class="who">Mini-política, matriz de datos y protocolo</span>
+ <ol>
+  <li>Elige un flujo real que podría usar IA, por ejemplo, responder consultas de usuarios de un servicio.</li>
+  <li>Haz la matriz de auditoría de datos: cada dato que entra, su nivel de sensibilidad, si es necesario, qué herramienta puede procesarlo y cuánto tiempo se guarda.</li>
+  <li>Dibuja el flujo y marca los puntos donde una persona revisa o aprueba, con su criterio de decisión.</li>
+  <li>Redacta una mini-política de una página: qué herramientas están permitidas, qué datos nunca se usan, cómo se declara el uso de IA y a quién se reportan incidentes.</li>
+  <li>Pide a un compañero que busque un hueco en tu política y corrígelo.</li>
+ </ol></div>
+</div>
+<div class="diy-f">
+ <div><div class="lbl">Entregable</div><p>Un protocolo de supervisión humana (puntos de control, responsables, criterios y registro) y una matriz de auditoría de datos para un flujo de trabajo asistido por IA.</p></div>
+ <div><div class="lbl">Lista de verificación</div><ul class="check"><li>Cada dato tiene un nivel de sensibilidad y una regla.</li><li>Las acciones críticas tienen un punto de aprobación humana.</li><li>Cada decisión queda registrada.</li><li>Reconoces al menos un límite de tu solución.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F3</span>Lecturas recomendadas</h4>
+<ul class="readings">
+<li><a href="https://www.unesco.org/en/artificial-intelligence/recommendation-ethics" target="_blank" rel="noopener">UNESCO, <i>Recomendación sobre la ética de la inteligencia artificial</i></a>. <span class="kind">marco internacional</span></li>
+<li><a href="https://oecd.ai/en/ai-principles" target="_blank" rel="noopener">OCDE, Principios de IA</a>. <span class="kind">marco internacional</span></li>
+<li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST, <i>AI Risk Management Framework</i></a>. <span class="kind">marco de gestión de riesgos</span></li>
+<li><a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">OWASP, <i>Top 10 for LLM Applications</i></a>. <span class="kind">seguridad de aplicaciones con LLMs</span></li>
+</ul>
+</div>

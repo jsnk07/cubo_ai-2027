@@ -1,0 +1,120 @@
+<section class="part" id="parte-4"><canvas data-scene="part" data-v="4" aria-hidden="true"></canvas><div class="inner"><div class="num">Módulo F4</div><h2>Datos como sistema, Machine Learning y visión computacional</h2><p>Por qué los datos deciden un proyecto de IA, cómo aprende un modelo desde cero y cómo una red neuronal llega a “ver” una imagen.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f4">
+<h3 class="sec-h"><span class="n">F4 · Panorama</span>Lo que vas a lograr</h3>
+<div class="objectives"><div class="lbl">Al terminar F4 podrás</div><ul>
+<li>Recolectar, limpiar y estructurar datos, priorizando su calidad.</li>
+<li>Explicar cómo se entrena y se evalúa un modelo de Machine Learning.</li>
+<li>Describir la estructura de una red neuronal y cómo procesa imágenes.</li>
+</ul><div class="meta-row"><span>3 temas</span><span>Entregable: pipeline de datos + informe técnico de un modelo</span></div></div>
+<div class="topicmap"><a href="#f4-1"><b>F4.1</b>Datos como sistema</a><a href="#f4-2"><b>F4.2</b>Machine Learning desde cero</a><a href="#f4-3"><b>F4.3</b>Redes neuronales y visión</a></div>
+
+<section class="sec" id="f4-1">
+<h3 class="sec-h"><span class="n">F4.1</span>Datos como sistema</h3>
+<p>Un modelo es tan bueno como los datos con que se entrena y se evalúa. Un algoritmo brillante con datos sucios produce resultados malos con mucha seguridad. Por eso en los proyectos reales la mayor parte del tiempo se va en los datos, no en el modelo.</p>
+<p>Piensa en los datos como un sistema con etapas:</p>
+<ol>
+<li><b>Captura:</b> de dónde vienen, con qué permiso y con qué frecuencia.</li>
+<li><b>Limpieza:</b> duplicados, valores faltantes, formatos inconsistentes (fechas, mayúsculas, unidades), errores de digitación.</li>
+<li><b>Estructura:</b> columnas con significado claro, tipos correctos, un diccionario de datos que explique cada campo.</li>
+<li><b>Calidad:</b> ¿representan a todos los casos y grupos que el sistema va a ver en la realidad?</li>
+<li><b>Versionado:</b> saber qué versión de los datos produjo qué resultado.</li>
+</ol>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Calidad de datos antes que arquitectura del modelo.</li>
+<li>Si un grupo no está en los datos, el modelo no sabrá tratarlo bien.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué datos de tu institución están en papel, en hojas sueltas o en formatos distintos? ¿Qué haría falta para usarlos?</div>
+
+<section class="sec" id="f4-2">
+<h3 class="sec-h"><span class="n">F4.2</span>Machine Learning desde principios básicos</h3>
+<p>En la programación tradicional escribes las reglas. En Machine Learning le das al sistema ejemplos con la respuesta correcta y él encuentra las reglas. Un modelo que predice si un cliente pagará a tiempo aprende de miles de casos anteriores con su resultado.</p>
+<p>El ciclo básico:</p>
+<ol>
+<li><b>Separa los datos</b> en entrenamiento (para aprender) y prueba (para medir). Nunca midas con los mismos datos con que entrenaste.</li>
+<li><b>Entrena</b> un modelo: el algoritmo ajusta sus parámetros para equivocarse lo menos posible en los ejemplos.</li>
+<li><b>Evalúa</b> con los datos de prueba: exactitud (accuracy), precisión, sensibilidad (recall) y la matriz de confusión, que muestra qué confunde con qué.</li>
+<li><b>Revisa los errores:</b> ¿en qué casos falla?, ¿falla más con algún grupo?</li>
+</ol>
+<p>Cuidado con el <b>sobreajuste</b>: un modelo que memoriza los datos de entrenamiento acierta casi todo ahí y falla con casos nuevos. Si la nota de entrenamiento es mucho mejor que la de prueba, está memorizando.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Ejemplos con respuesta → el modelo aprende las reglas.</li>
+<li>Entrenamiento y prueba siempre separados.</li>
+<li>La matriz de confusión dice más que un solo porcentaje.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>Un modelo de detección de fraude acierta el 99 %. Si solo el 1 % de las transacciones son fraude, ¿es un buen modelo?</div>
+
+<section class="sec" id="f4-3">
+<h3 class="sec-h"><span class="n">F4.3</span>Redes neuronales y visión computacional</h3>
+<p>Una red neuronal es una cadena de capas de operaciones matemáticas simples. Cada “neurona” multiplica sus entradas por pesos, las suma y aplica una función. Durante el entrenamiento, los pesos se ajustan poco a poco para reducir el error. Con muchas capas, la red aprende representaciones cada vez más abstractas: eso es el aprendizaje profundo (deep learning).</p>
+<p>Para una computadora, una imagen es una tabla de números: el brillo de cada píxel. Las redes para visión, como las convolucionales, aprenden primero bordes, luego formas y luego objetos. Con eso se construyen tareas como:</p>
+<ul class="cols2">
+<li>Clasificación: ¿qué hay en la imagen?</li>
+<li>Detección: ¿dónde está cada objeto?</li>
+<li>Segmentación: ¿qué píxeles pertenecen a qué?</li>
+<li>Lectura de texto (OCR) en fotos y documentos.</li>
+</ul>
+<p>Los mismos problemas de F4.1 aplican aquí: si las imágenes de entrenamiento se tomaron con buena luz, el modelo puede fallar de noche.</p>
+<div class="keys"><div class="lbl">Ideas clave</div><ul>
+<li>Una red neuronal aprende ajustando pesos para reducir el error.</li>
+<li>Una imagen es una matriz de números; la red aprende patrones sobre ella.</li>
+</ul></div>
+<div class="think"><b>Para pensar</b>¿Qué tarea visual de tu entorno (documentos, cultivos, tráfico, infraestructura) podría automatizarse y qué imágenes harían falta para entrenarla?</div>
+
+<section class="sec" id="f4-eval">
+<h3 class="sec-h"><span class="n">F4 · Autoevaluación</span>Comprueba lo que aprendiste</h3>
+<details class="qa"><summary>¿Por qué se separan los datos en entrenamiento y prueba?</summary><p>Para medir el desempeño con casos que el modelo no vio; medir con los datos de entrenamiento sobrestima la calidad.</p></details>
+<details class="qa"><summary>¿Qué es el sobreajuste y cómo lo detectas?</summary><p>Es cuando el modelo memoriza los datos de entrenamiento y generaliza mal. Se nota cuando su desempeño en entrenamiento es mucho mejor que en prueba.</p></details>
+<details class="qa"><summary>¿Qué muestra una matriz de confusión?</summary><p>Cuántos casos de cada clase real fueron clasificados en cada clase predicha, es decir, qué errores comete el modelo.</p></details>
+<details class="qa"><summary>Nombra tres problemas comunes de limpieza de datos.</summary><p>Duplicados, valores faltantes, formatos inconsistentes y errores de digitación (cualquiera tres).</p></details>
+<details class="qa"><summary>¿Cómo “ve” una imagen una red neuronal?</summary><p>Como una matriz de números con el brillo de cada píxel, sobre la que aprende patrones de bordes, formas y objetos.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f4">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F4</div><h4>Del dato sucio al modelo evaluado</h4><p>Limpia un conjunto de datos, entrena un modelo de visión básico y explica con números qué tan bien funciona. Produce el entregable de F4.</p><div class="meta-row"><span>3–4 horas</span><span>Individual o en pareja</span><span>Técnica: Jupyter en Docker o Colab</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Ruta técnica</h5><span class="who">Pipeline de limpieza y clasificador de dígitos</span>
+ <ol>
+  <li>Abre un cuaderno. Sin instalar nada, usa Google Colab, o levanta Jupyter en Docker y entra a la dirección que imprime la terminal:
+<pre><code>docker run -p 8888:8888 -v "$PWD":/home/jovyan/work quay.io/jupyter/scipy-notebook</code></pre></li>
+  <li>Descarga un CSV de datos abiertos de tu interés y escribe una función <code>limpiar(df)</code> con pandas que quite duplicados, trate valores faltantes, normalice fechas y textos, y fije tipos. Imprime cuántas filas cambió cada paso.</li>
+  <li>Entrena un clasificador de imágenes de dígitos escritos a mano (vienen incluidos en scikit-learn):
+<pre><code>from sklearn.datasets import load_digits
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix
+X, y = load_digits(return_X_y=True)          <span class="c"># imágenes de 8×8 píxeles</span>
+Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.25, random_state=0)
+m = MLPClassifier(hidden_layer_sizes=(64,), max_iter=500, random_state=0).fit(Xtr, ytr)
+print("entrenamiento:", m.score(Xtr, ytr), "prueba:", accuracy_score(yte, m.predict(Xte)))
+print(confusion_matrix(yte, m.predict(Xte)))</code></pre></li>
+  <li>Muestra tres imágenes que el modelo clasificó mal y explica por qué crees que falló.</li>
+  <li>Cambia el tamaño de la capa oculta y compara entrenamiento contra prueba: ¿aparece sobreajuste?</li>
+ </ol></div>
+ <div class="route c"><h5>Ruta complementaria</h5><span class="who">Auditoría de calidad de un conjunto de datos</span>
+ <ol>
+  <li>Elige un conjunto de datos abiertos de tu área (por ejemplo, de un portal de datos públicos).</li>
+  <li>Escribe su diccionario de datos: cada campo, qué significa, su tipo y sus valores posibles.</li>
+  <li>En una hoja de cálculo, cuenta duplicados, celdas vacías y valores fuera de rango, y documenta cada problema.</li>
+  <li>Analiza la representatividad: ¿qué grupos, zonas o periodos faltan o sobran?</li>
+  <li>Plantea un caso de uso de ML con esos datos y escribe qué métrica usarías para evaluarlo y qué error sería más costoso.</li>
+ </ol></div>
+</div>
+{{SHOTS_F4}}
+<div class="diy-f">
+ <div><div class="lbl">Entregable</div><p>Un pipeline de preparación de datos (código o procedimiento documentado) y un informe técnico de una a dos páginas que evalúe un modelo predictivo o de visión: datos, método, métricas, errores y limitaciones.</p></div>
+ <div><div class="lbl">Lista de verificación</div><ul class="check"><li>Cada paso de limpieza dice cuántos registros afectó.</li><li>Las métricas salen de datos de prueba, no de entrenamiento.</li><li>Muestras ejemplos concretos de errores.</li><li>Nombras al menos un sesgo o vacío de los datos.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F4</span>Lecturas recomendadas</h4>
+<ul class="readings">
+<li><a href="https://developers.google.com/machine-learning/crash-course" target="_blank" rel="noopener">Google, <i>Machine Learning Crash Course</i></a>. <span class="kind">curso gratuito</span></li>
+<li><a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank" rel="noopener">3Blue1Brown, serie sobre redes neuronales</a>. <span class="kind">video · intuición visual</span></li>
+<li><a href="https://scikit-learn.org/stable/tutorial/index.html" target="_blank" rel="noopener">Tutoriales de scikit-learn</a>. <span class="kind">documentación</span></li>
+<li><a href="https://pandas.pydata.org/docs/getting_started/index.html" target="_blank" rel="noopener">pandas, <i>Getting started</i></a>. <span class="kind">documentación</span></li>
+</ul>
+</div>

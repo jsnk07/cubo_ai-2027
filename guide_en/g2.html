@@ -1,0 +1,111 @@
+<section class="part" id="parte-2"><canvas data-scene="part" data-v="2" aria-hidden="true"></canvas><div class="inner"><div class="num">Module F2</div><h2>Instruction design, verification and usage strategies</h2><p>How to ask a model for what you need, how to check what it gives back and how to use it to think better, not to think less.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f2">
+<h3 class="sec-h"><span class="n">F2 · Overview</span>What you will achieve</h3>
+<div class="objectives"><div class="lbl">By the end of F2 you will be able to</div><ul>
+<li>Structure clear instructions and define the output format upfront.</li>
+<li>Direct and correct AI work over several rounds.</li>
+<li>Verify responses and detect bias in data and outputs.</li>
+<li>Use AI to generate and compare ideas in a structured way.</li>
+</ul><div class="meta-row"><span>3 topics</span><span>Deliverable: validated prompt repertoire + audit report</span></div></div>
+<div class="topicmap"><a href="#f2-1"><b>F2.1</b>Writing instructions</a><a href="#f2-2"><b>F2.2</b>Auditing responses and bias</a><a href="#f2-3"><b>F2.3</b>Assisted ideation</a></div>
+
+<section class="sec" id="f2-1">
+<h3 class="sec-h"><span class="n">F2.1</span>Writing effective instructions</h3>
+<p>A prompt is a specification. The clearer you are about what you expect, the less the model has to guess. Before writing it, define what a good answer looks like: its format, its length and what it must not include.</p>
+<p>A structure that works in almost every case:</p>
+<ul>
+<li><b>Role and context:</b> who it is for and in what situation it will be used.</li>
+<li><b>Task:</b> what it has to do, with a clear verb (classify, summarize, extract, compare).</li>
+<li><b>Input data:</b> the text or information, separated with clear markers (for example, between tags or triple quotes).</li>
+<li><b>Output format:</b> list, table, JSON with defined fields, number of words.</li>
+<li><b>Examples:</b> one or two solved cases (few-shot) when the format or criterion is not obvious.</li>
+<li><b>Constraints:</b> what to do if it doesn't know (“answer <i>not found</i>”), what not to invent.</li>
+</ul>
+<p>The first prompt is rarely the right one. Work in rounds: test, see where it fails, change one thing at a time and test again with the same cases. That way you know which change improved the result.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Define the result before writing the prompt.</li>
+<li>Change one thing at a time and always test with the same set of cases.</li>
+<li>Give the model an honest way out for when it doesn't know.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>What instruction would you give a new person at your job so they do a task well on day one? What is your prompt missing compared with that?</div>
+
+<section class="sec" id="f2-2">
+<h3 class="sec-h"><span class="n">F2.2</span>Auditing responses and detecting bias</h3>
+<p>Verifying is not rereading the answer to see if it “sounds right”. It is comparing it with something you know is true. Some practical techniques:</p>
+<ul>
+<li><b>Reference answers:</b> prepare cases with a known correct answer and measure how many the model gets right.</li>
+<li><b>Sources:</b> ask it to cite where each fact comes from and check that the source exists and says that.</li>
+<li><b>Consistency:</b> ask the same question in several ways or several times; if the answer changes, be suspicious.</li>
+<li><b>Counterfactual bias tests:</b> change only one attribute (name, gender, area of residence) and see whether the model's decision changes.</li>
+</ul>
+<p>Bias can come from the model's training data, from the data you give it or from the way you frame the task. That is why the audit checks all three.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Without reference cases there is no way to measure quality.</li>
+<li>Changing a single attribute is the simplest and most revealing bias test.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>If an assistant evaluates scholarship applications, which attribute would you change first to test whether it is fair?</div>
+
+<section class="sec" id="f2-3">
+<h3 class="sec-h"><span class="n">F2.3</span>Assisted ideation methods</h3>
+<p>AI is very good at generating many options quickly and bad at choosing the right one for you. Use it in the phases where quantity helps, and decide yourself where judgment matters:</p>
+<ol>
+<li><b>Diverge:</b> ask for 20 ideas, different approaches or the perspectives of several stakeholders (user, operator, regulator).</li>
+<li><b>Cluster:</b> ask it to organize the ideas by theme or type of solution.</li>
+<li><b>Critique:</b> ask for the arguments against each idea, or have it act as a skeptical reviewer.</li>
+<li><b>Decide:</b> you choose, with explicit criteria such as impact, feasibility and risk.</li>
+</ol>
+<p>Record which ideas came from AI and which from the team. In the defense you will be asked why you chose a path, and “the model suggested it” is not a reason.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Diverge with AI, decide with human criteria.</li>
+<li>Asking for critiques is as useful as asking for ideas.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>What criterion would you use to discard an idea the model presents as excellent?</div>
+
+<section class="sec" id="f2-eval">
+<h3 class="sec-h"><span class="n">F2 · Self-assessment</span>Check what you learned</h3>
+<details class="qa"><summary>Name four parts of a well-structured prompt.</summary><p>Role and context, task, delimited input data, output format, examples and constraints (any four).</p></details>
+<details class="qa"><summary>Why change only one thing at a time when improving a prompt?</summary><p>So you know which change caused the improvement or the decline when you compare against the same cases.</p></details>
+<details class="qa"><summary>What is a counterfactual bias test?</summary><p>Repeating the same input changing only one attribute, such as name or gender, to see whether the model's decision changes.</p></details>
+<details class="qa"><summary>What is few-shot?</summary><p>Including one or a few solved examples in the prompt to show the model the expected format or criterion.</p></details>
+<details class="qa"><summary>In an ideation session, which part should you not delegate to AI?</summary><p>The final decision, which must rest on the team's explicit criteria.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f2">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F2</div><h4>Prompt lab with evidence</h4><p>Design a prompt repertoire for a real task, test it with reference cases and audit it for bias. Produces the F2 deliverable.</p><div class="meta-row"><span>3–4 hours</span><span>Individual or in pairs</span><span>Technical: Docker + Ollama</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Technical route</h5><span class="who">Evaluate prompt variants with a script</span>
+ <ol>
+  <li>Choose a classification task, for example sorting citizen queries into <i>procedure</i>, <i>complaint</i>, <i>information</i> or <i>other</i>.</li>
+  <li>Write 20 cases in <code>cases.csv</code> with the correct label. Use made-up texts, without personal data.</li>
+  <li>Write three versions of the prompt in <code>prompts/v1.txt</code>, <code>v2.txt</code> and <code>v3.txt</code>: a basic one, one with a fixed output format and one with two examples (few-shot).</li>
+  <li>With the F1 model in Ollama, write <code>evaluate.py</code>: for each version and each case, request the label with <code>"options": {"temperature": 0}</code> and compare it with the correct one. Print each version's accuracy.</li>
+  <li>Bias test: take five cases, change only the writer's name or gender and check whether the label changes.</li>
+  <li>Commit each version of the prompt so the history shows how you improved.</li>
+ </ol></div>
+ <div class="route c"><h5>Complementary route</h5><span class="who">Prompt repertoire and quality rubric</span>
+ <ol>
+  <li>Choose three tasks from your discipline: for example, summarizing a report, drafting a reply to a user and extracting data from a document.</li>
+  <li>For each task, write the prompt with the F2.1 structure and define a 1-to-3 rubric for accuracy, format and tone.</li>
+  <li>Test each prompt with five different inputs in an AI assistant and score each answer with your rubric.</li>
+  <li>Improve the lowest-scoring prompt and test it again with the same five inputs.</li>
+  <li>Audit one case: change a personal attribute in the input and document whether the answer changed.</li>
+ </ol></div>
+</div>
+<div class="diy-f">
+ <div><div class="lbl">Deliverable</div><p>A repertoire of validated prompts (with their final version, purpose and score) and a one- to two-page audit report on the accuracy and bias observed in the case study.</p></div>
+ <div><div class="lbl">Checklist</div><ul class="check"><li>Each prompt has test cases and a measured result.</li><li>You can show the previous version and explain what changed.</li><li>The bias test changes a single attribute.</li><li>You did not use real personal data.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F2</span>Recommended readings</h4>
+<ul class="readings">
+<li><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener">Anthropic, prompt engineering guide</a>. <span class="kind">documentation</span></li>
+<li><a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noopener">OpenAI, <i>Prompt engineering</i></a>. <span class="kind">documentation</span></li>
+<li><a href="https://learnprompting.org/" target="_blank" rel="noopener">Learn Prompting</a>. <span class="kind">open course</span></li>
+<li><a href="https://docs.ollama.com/" target="_blank" rel="noopener">Ollama documentation and API</a>. <span class="kind">technical reference</span></li>
+</ul>
+</div>

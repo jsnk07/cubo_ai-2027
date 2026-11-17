@@ -1,0 +1,116 @@
+<section class="part" id="parte-3"><canvas data-scene="part" data-v="3" aria-hidden="true"></canvas><div class="inner"><div class="num">Module F3</div><h2>Ethics, data protection and responsible use policies</h2><p>What responsibility those who build with AI carry, how to protect people's information and where to place a human before the system acts.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f3">
+<h3 class="sec-h"><span class="n">F3 · Overview</span>What you will achieve</h3>
+<div class="objectives"><div class="lbl">By the end of F3 you will be able to</div><ul>
+<li>Analyze ethical, privacy and technological-dependence dilemmas in an AI project.</li>
+<li>Handle sensitive and confidential data safely.</li>
+<li>Design a responsible AI use mini-policy for a team.</li>
+<li>Define human oversight and traceability points in an AI workflow.</li>
+</ul><div class="meta-row"><span>3 topics</span><span>Deliverable: human oversight protocol + data audit matrix</span></div></div>
+<div class="topicmap"><a href="#f3-1"><b>F3.1</b>Ethics and dependence</a><a href="#f3-2"><b>F3.2</b>Confidential information</a><a href="#f3-3"><b>F3.3</b>Human oversight</a></div>
+
+<section class="sec" id="f3-1">
+<h3 class="sec-h"><span class="n">F3.1</span>Ethics, responsibility and technological dependence</h3>
+<p>An AI system makes or influences decisions at a scale no person can reach. If it has a bias, it repeats it thousands of times. That is why ethics is not a separate chapter of the project: it is in every design decision.</p>
+<p>Four questions you should be able to answer about any system you build:</p>
+<ul>
+<li><b>Fairness:</b> does it treat groups of people differently without a legitimate reason?</li>
+<li><b>Privacy:</b> does it use personal data it doesn't need or that people did not authorize?</li>
+<li><b>Transparency:</b> do people know they are interacting with AI and can they understand why a decision was made?</li>
+<li><b>Accountability:</b> if it is wrong, who answers for it and how is it corrected?</li>
+</ul>
+<p>There is also the risk of <b>dependence</b>: depending on a single provider, on a model that can change without notice or on a tool the team no longer knows how to replace. Designing with alternatives, and with open models where possible, reduces that risk; it is part of what is called sovereign AI (F5.5).</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Fairness, privacy, transparency and accountability: four questions for every system.</li>
+<li>Technological dependence is also a risk you design for.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>If your system wrongly denies a service, how does the person find out and whom can they complain to?</div>
+
+<section class="sec" id="f3-2">
+<h3 class="sec-h"><span class="n">F3.2</span>Safeguarding confidential information and moral dilemmas</h3>
+<p>Before sending data to a model, ask where it goes. If you use a cloud service, the text leaves your computer and is subject to that provider's terms. If you use a local model, like those in Ollama, it stays on your machine.</p>
+<p>Basic good practices:</p>
+<ul>
+<li><b>Minimize:</b> send only the data the task needs.</li>
+<li><b>Anonymize or pseudonymize:</b> replace names, ID numbers, phone numbers and emails with placeholders before processing.</li>
+<li><b>Classify:</b> public, internal, confidential and restricted, each level with rules on which tool can touch it.</li>
+<li><b>Log:</b> what data was used, for what and with which tool.</li>
+<li><b>Comply:</b> check the applicable data protection law and your institution's policies.</li>
+</ul>
+<p>Real dilemmas are rarely black and white: a more accurate system may need more personal data; a more useful answer may expose a third party's information. Documenting how you decided is as important as the decision.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Knowing where the data goes is the first security decision.</li>
+<li>Minimize and anonymize before processing.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>Which data from your work would you never paste into a cloud assistant? Why?</div>
+
+<section class="sec" id="f3-3">
+<h3 class="sec-h"><span class="n">F3.3</span>Human oversight and audit protocols</h3>
+<p><b>Human-in-the-loop</b> means a person reviews or approves at a defined point in the workflow. It is not reviewing “when there is time”: it is a designed control, with clear criteria.</p>
+<p>To design it, answer:</p>
+<ol>
+<li><b>Which actions are critical?</b> Sending a message to a citizen, approving a payment, deleting data, publishing something.</li>
+<li><b>Who approves and with what information?</b> The person must see the system's proposal and its basis, not just a button.</li>
+<li><b>What happens if they reject it?</b> The case goes back to a queue, is corrected or escalated.</li>
+<li><b>What is recorded?</b> Input, model output, human decision, who and when. That is traceability.</li>
+</ol>
+<p>A good protocol also defines thresholds: for example, the system acts on its own only when its confidence is high and the risk low, and asks for review in everything else.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Human oversight is designed at specific points in the workflow.</li>
+<li>Without a record there is no possible audit.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>If the human reviewer approves 99% without reading, is there still oversight? How would you prevent it?</div>
+
+<section class="sec" id="f3-eval">
+<h3 class="sec-h"><span class="n">F3 · Self-assessment</span>Check what you learned</h3>
+<details class="qa"><summary>What are the four basic ethical questions for an AI system?</summary><p>Fairness, privacy, transparency and accountability.</p></details>
+<details class="qa"><summary>In terms of privacy, what is the difference between a local model and a cloud one?</summary><p>With a local model the data does not leave your machine; with a cloud service it travels to the provider and is subject to its terms.</p></details>
+<details class="qa"><summary>What does pseudonymize mean?</summary><p>Replacing the data that identifies a person with placeholders or codes, so the text stays useful without exposing them.</p></details>
+<details class="qa"><summary>What must a workflow with human oversight record?</summary><p>The input, the model's proposal, the human decision, who made it and when.</p></details>
+<details class="qa"><summary>Why is dependence on a provider an ethical and operational risk?</summary><p>Because the service, the model or its terms can change outside the institution's control, affecting continuity, costs and data.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f3">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F3</div><h4>Protected data and a human in the loop</h4><p>Take an AI-assisted workflow, protect the data before it reaches the model and define where a person approves. Produces the F3 deliverable.</p><div class="meta-row"><span>3 hours</span><span>Individual or in pairs</span><span>Technical: Python + Ollama</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Technical route</h5><span class="who">Personal data filter and approval point</span>
+ <ol>
+  <li>Create <code>cuboai-f3</code> with five made-up sample messages that include fake names, emails and phone numbers.</li>
+  <li>Write <code>redact.py</code> with regular expressions that replace emails and phone numbers with <code>[EMAIL]</code> and <code>[PHONE]</code>:
+<pre><code>import re
+def redact(t):
+    t = re.sub(r"[\w.+-]+@[\w-]+\.[\w.]+", "[EMAIL]", t)
+    t = re.sub(r"\b\d{4}[- ]?\d{4}\b", "[PHONE]", t)
+    return t</code></pre></li>
+  <li>Send the redacted text to your local model so it proposes a reply.</li>
+  <li>Before “sending”, show the proposal and ask for approval with <code>input("Approve? (y/n) ")</code>. If not, the case stays pending.</li>
+  <li>Save each decision to <code>audit.jsonl</code>: time, redacted text, proposal, decision and reviewer.</li>
+  <li>Document in the README which personal data still slips past your filter (for example, names) and how you would fix it.</li>
+ </ol></div>
+ <div class="route c"><h5>Complementary route</h5><span class="who">Mini-policy, data matrix and protocol</span>
+ <ol>
+  <li>Choose a real workflow that could use AI, for example answering users' queries about a service.</li>
+  <li>Build the data audit matrix: each data item that comes in, its sensitivity level, whether it is necessary, which tool can process it and how long it is kept.</li>
+  <li>Draw the workflow and mark the points where a person reviews or approves, with their decision criterion.</li>
+  <li>Write a one-page mini-policy: which tools are allowed, which data is never used, how AI use is disclosed and to whom incidents are reported.</li>
+  <li>Ask a classmate to find a gap in your policy and fix it.</li>
+ </ol></div>
+</div>
+<div class="diy-f">
+ <div><div class="lbl">Deliverable</div><p>A human oversight protocol (checkpoints, owners, criteria and logging) and a data audit matrix for an AI-assisted workflow.</p></div>
+ <div><div class="lbl">Checklist</div><ul class="check"><li>Each data item has a sensitivity level and a rule.</li><li>Critical actions have a human approval point.</li><li>Every decision is logged.</li><li>You acknowledge at least one limitation of your solution.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F3</span>Recommended readings</h4>
+<ul class="readings">
+<li><a href="https://www.unesco.org/en/artificial-intelligence/recommendation-ethics" target="_blank" rel="noopener">UNESCO, <i>Recommendation on the Ethics of Artificial Intelligence</i></a>. <span class="kind">international framework</span></li>
+<li><a href="https://oecd.ai/en/ai-principles" target="_blank" rel="noopener">OECD AI Principles</a>. <span class="kind">international framework</span></li>
+<li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST, <i>AI Risk Management Framework</i></a>. <span class="kind">risk management framework</span></li>
+<li><a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">OWASP, <i>Top 10 for LLM Applications</i></a>. <span class="kind">LLM application security</span></li>
+</ul>
+</div>

@@ -1,0 +1,98 @@
+<section class="part" id="parte-7"><canvas data-scene="part" data-v="7" aria-hidden="true"></canvas><div class="inner"><div class="num">Part VII</div><h2>Certification and verification</h2><p>The credential is institutional and its verification is cryptographic. They are two different things and both matter.</p></div></section>
+
+<div class="col">
+<section class="sec" id="s23">
+<h3 class="sec-h"><span class="n">Section 23</span>Certification framework</h3>
+<p>CUBO_ai certification is based on demonstrated competence, not mere attendance. To qualify, the participant must:</p>
+<ol><li>Complete the required curriculum.</li><li>Complete The AI Challenge requirements.</li><li>Advance successfully through the selection process.</li><li>Complete the Technical Bootcamp.</li><li>Complete the hackathon project.</li><li>Reach the established competency thresholds.</li><li>Successfully complete the final defense and evaluation.</li></ol>
+</section>
+
+<section class="sec" id="s24">
+<h3 class="sec-h"><span class="n">Section 24</span>Credential issuance and institutional governance</h3>
+<p>The certification architecture separates institutional certification from digital verification.</p>
+<div class="tiles">
+<div class="tile"><div class="ti" data-ic="cube"></div><b>24.1 · CUBO_ai</b><span>Curriculum design, training, evaluation, competency assessment and certification decision.</span></div>
+<div class="tile"><div class="ti" data-ic="shield"></div><b>24.2 · ANIA</b><span>The National Artificial Intelligence Agency, the institution in charge of the program, officially issues and recognizes the credential, publishes it on the designated institutional platform and manages institutional records.</span></div>
+<div class="tile"><div class="ti" data-ic="hash"></div><b>24.3 · Cryptographic verification layer</b><span>SHA-256 hash and immutable timestamping (OpenTimestamps) associated with the credential's digital record.</span></div>
+</div>
+<h4><span class="n">24.3</span>Cryptographic verification layer</h4>
+<p>The selected verification infrastructure uses cryptographic records, such as the SHA-256 hash and immutable timestamping with OpenTimestamps, associated with the digital credential record, to guarantee its integrity and traceability.</p>
+<p>This layer must not be described as the institution that certifies participants. Its role is to provide cryptographic evidence associated with the digital record. <b>The certificate remains an institutional credential issued by the competent authority.</b></p>
+</section>
+
+<section class="sec" id="s25">
+<h3 class="sec-h"><span class="n">Section 25</span>Digital credential verification model</h3>
+<p>The proposed model is:</p>
+<p class="flow">CUBO_ai evaluation → institutional certification → official credential issuance → publication → cryptographic timestamp → verification reference → <b>independent verification</b></p>
+<p>The operating principle is:</p>
+</div>
+
+<figure class="fig verify">
+<div class="scroll"><svg viewBox="0 0 960 230" role="img" aria-label="Issue, hash, timestamp, publish and verify" style="min-width:680px">
+ <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--muted)"/></marker></defs>
+ <g transform="translate(40 40)"><path d="M0 0h86l34 34v116H0z" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/><path d="M86 0v34h34" fill="none" stroke="var(--ink)" stroke-width="2"/><rect x="16" y="50" width="70" height="7" rx="3" fill="var(--line)"/><rect x="16" y="66" width="88" height="7" rx="3" fill="var(--line)"/><rect x="16" y="82" width="60" height="7" rx="3" fill="var(--line)"/><circle cx="88" cy="120" r="16" fill="var(--acc)"/><path d="M81 120l5 5 9-10" stroke="var(--on-sec)" stroke-width="2.5" fill="none"/></g>
+ <path d="M172 115H222" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/>
+ <g transform="translate(232 55)"><rect width="150" height="120" rx="14" fill="var(--night)"/><text x="75" y="34" text-anchor="middle" style="font:400 16px Anton,sans-serif;fill:var(--acc-hi)">SHA-256</text>
+  <text x="75" y="62" text-anchor="middle" style="font:500 11px IBM Plex Mono,monospace;fill:var(--on-night-muted)">9f2c…a71e</text><text x="75" y="80" text-anchor="middle" style="font:500 11px IBM Plex Mono,monospace;fill:var(--on-night-muted)">04bd…3c58</text><text x="75" y="98" text-anchor="middle" style="font:500 11px IBM Plex Mono,monospace;fill:var(--on-night-dim)">unique fingerprint</text></g>
+ <path d="M392 115H442" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/>
+ <g transform="translate(452 30)">
+  <g stroke="var(--sec)" stroke-width="2" fill="none"><path d="M85 22L45 62M85 22L125 62M45 62L25 100M45 62L65 100M125 62L105 100M125 62L145 100"/></g>
+  <g fill="var(--sec)"><circle cx="85" cy="22" r="9"/><circle cx="45" cy="62" r="7"/><circle cx="125" cy="62" r="7"/><circle cx="25" cy="100" r="6"/><circle cx="65" cy="100" r="6"/><circle cx="105" cy="100" r="6"/></g>
+  <circle cx="145" cy="100" r="8" fill="var(--acc)"><animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/></circle>
+  <rect x="0" y="128" width="170" height="50" rx="10" fill="var(--sec-soft)" stroke="var(--sec)" stroke-width="2"/>
+  <text x="85" y="150" text-anchor="middle" class="svgtxt">timestamp</text><text x="85" y="168" text-anchor="middle" class="svgsub">OpenTimestamps · .ots</text>
+ </g>
+ <path d="M622 115H672" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/>
+ <g transform="translate(682 50)"><rect width="120" height="130" rx="12" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/><rect width="120" height="26" rx="12" fill="var(--night)"/><circle cx="16" cy="13" r="4" fill="var(--acc)"/><circle cx="30" cy="13" r="4" fill="var(--on-night-dim)"/><rect x="14" y="42" width="92" height="8" rx="4" fill="var(--line)"/><rect x="14" y="60" width="70" height="8" rx="4" fill="var(--line)"/><rect x="8" y="88" width="104" height="26" rx="8" fill="var(--acc-soft)" stroke="var(--acc)"/><text x="60" y="105" text-anchor="middle" class="svgsub" style="font-size:9.5px;fill:var(--acc-deep)">official record</text></g>
+ <path d="M812 115H862" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/>
+ <g transform="translate(872 70)"><circle cx="38" cy="38" r="34" fill="none" stroke="var(--acc)" stroke-width="5"/><path d="M62 62l22 22" stroke="var(--acc)" stroke-width="7" stroke-linecap="round"/><path d="M24 38l10 10 18-20" stroke="var(--ok)" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+ <circle r="6" fill="var(--acc)"><animateMotion dur="5s" repeatCount="indefinite" path="M100 115H950"/></circle>
+</svg></div>
+<div class="vsteps">
+ <div><b>1 · Issue</b>ANIA issues the certificate as a PDF.</div>
+ <div><b>2 · Hash</b>Its SHA-256 fingerprint is computed: any change to the PDF alters it completely.</div>
+ <div><b>3 · Timestamp</b>The fingerprint is timestamped with OpenTimestamps, which anchors it in the Bitcoin blockchain.</div>
+ <div><b>4 · Publish</b>The record is published on the designated institutional portal.</div>
+ <div><b>5 · Verify</b>Any third party checks the fingerprint, the timestamp and the proof.</div>
+</div>
+<figcaption><b>Figure 27</b>Issue → hash → timestamp → publish → verify. The hash values are illustrative.</figcaption>
+</figure>
+
+<div class="col">
+<p>Through the designated official institutional portal, any third party can verify:</p>
+<ol>
+<li><b>Source file authenticity:</b> the SHA-256 hash of the issued certificate PDF.</li>
+<li><b>Cryptographic timestamp:</b> the record and the exact date and time the credential hash was anchored.</li>
+<li><b>Cryptographic proof:</b> the verifiable proof that allows independent, decentralized validation.</li>
+</ol>
+</section>
+
+<section class="sec" id="s26">
+<h3 class="sec-h"><span class="n">Section 26</span>Credential data specifications</h3>
+<p>A CUBO_ai digital credential may contain, where applicable:</p>
+<ul class="cols2"><li>Participant name.</li><li>Credential designation.</li><li>Program name.</li><li>Cohort or year.</li><li>Issue date.</li><li>Issuing institution (ANIA).</li><li>Competency framework.</li><li>Completion status.</li><li>Credential identifier.</li><li>Verification reference.</li><li>Cryptographic verification information, where applicable.</li></ul>
+<p>Publicly accessible records must minimize exposure of unnecessary personal information.</p>
+</section>
+
+<section class="sec" id="s27">
+<h3 class="sec-h"><span class="n">Section 27</span>Verification lifecycle</h3>
+</div>
+<figure class="fig">
+<div class="life">
+ <div><small>STEP 01</small>The participant completes the requirements</div>
+ <div><small>STEP 02</small>CUBO_ai final evaluation</div>
+ <div><small>STEP 03</small>Certification decision</div>
+ <div class="cert"><small>STEP 04</small>Certificate issued</div>
+ <div class="cert"><small>STEP 05</small>Credential published on the official channel</div>
+ <div class="dig"><small>STEP 06</small>Digital fingerprint (hash) generated</div>
+ <div class="dig"><small>STEP 07</small>Cryptographic timestamp</div>
+ <div class="dig"><small>STEP 08</small>Verification reference associated</div>
+ <div class="dig"><small>STEP 09</small>Third parties verify the credential</div>
+</div>
+<div class="pipe-legend"><span><i style="background:var(--paper);border:1px solid var(--line)"></i>Evaluation</span><span><i style="background:var(--acc-soft)"></i>Institutional certification</span><span><i style="background:var(--sec-soft)"></i>Digital verification</span></div>
+<figcaption><b>Figure 28</b>Nine steps that clearly separate the institutional from the digital.</figcaption>
+</figure>
+<div class="col">
+<p>This creates a clear distinction between institutional certification and digital verification.</p>
+</section>
+</div>

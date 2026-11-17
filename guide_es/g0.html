@@ -1,0 +1,64 @@
+<section class="part" id="parte-0"><canvas data-scene="part" data-v="1" aria-hidden="true"></canvas><div class="inner"><div class="num">Antes de empezar</div><h2>Cómo usar esta guía</h2><p>Tu mapa para estudiar los Fundamentos, prepararte para The AI Challenge y llegar listo al Bootcamp técnico.</p></div></section>
+
+<div class="col">
+<section class="sec" id="g-uso">
+<h3 class="sec-h"><span class="n">Bienvenida</span>Qué vas a encontrar aquí</h3>
+<p class="lead">Esta guía acompaña cada clase de CUBO_ai. Explica los temas de los cinco módulos de Fundamentos con palabras de estudio, te propone ejercicios para practicar solo o en equipo y te prepara para las dos etapas donde se decide tu avance: The AI Challenge y el Bootcamp técnico.</p>
+<p>No reemplaza las clases ni a los docentes. Úsala antes de cada sesión para llegar con contexto, y después para repasar y practicar. Cada módulo tiene la misma estructura:</p>
+<div class="tiles">
+ <div class="tile"><div class="ti" data-ic="target"></div><b>Objetivos</b><span>Lo que deberías poder hacer al terminar el módulo. Úsalos como lista de control.</span></div>
+ <div class="tile"><div class="ti" data-ic="book"></div><b>Temas</b><span>Una lectura por tema, con ideas clave y una pregunta para pensar.</span></div>
+ <div class="tile"><div class="ti" data-ic="check"></div><b>Autoevaluación</b><span>Preguntas con respuesta para comprobar que entendiste antes de avanzar.</span></div>
+ <div class="tile"><div class="ti" data-ic="lab"></div><b>DIY workshop</b><span>Un ejercicio práctico con dos rutas, técnica y complementaria, que produce el entregable del módulo.</span></div>
+</div>
+
+<h4><span class="n">01</span>Las dos rutas de los DIY</h4>
+<p>CUBO_ai trabaja con una sola cohorte y perfiles distintos. Por eso cada DIY tiene dos rutas que llegan al mismo aprendizaje por caminos diferentes:</p>
+<ul>
+<li><b>Ruta técnica:</b> Python, terminal, modelos locales, APIs y servidores MCP. Pensada para perfiles de desarrollo.</li>
+<li><b>Ruta complementaria:</b> investigación, análisis, casos de prueba, criterios de calidad y documentos. Pensada para perfiles de negocio, producto, diseño, datos, derecho u operaciones.</li>
+</ul>
+<p>Puedes hacer las dos. Intentar la ruta que no es la tuya es la mejor forma de entender a tus futuros compañeros de equipo. Cada DIY indica su tiempo estimado, lo que necesitas, los pasos, el entregable y una lista de verificación.</p>
+
+<h4><span class="n">02</span>Tres reglas que aplican a todo lo que entregues</h4>
+<div class="tiles">
+ <div class="tile"><div class="ti" data-ic="git"></div><b>Deja evidencia</b><span>Trabaja en un repositorio o documento con historial. Commits pequeños y frecuentes cuentan más que una carga masiva el último día.</span></div>
+ <div class="tile"><div class="ti" data-ic="user"></div><b>Todo lo que entregas, lo defiendes</b><span>Si no puedes explicar algo que lleva tu nombre, no cuenta como tuyo. Así funciona la defensa individual.</span></div>
+ <div class="tile"><div class="ti" data-ic="ai"></div><b>Usa la IA con responsabilidad</b><span>Puedes usarla para investigar, programar o redactar, pero tú verificas, pruebas y respondes por el resultado.</span></div>
+</div>
+<div class="motto"><b>Constructores por encima de creadores de prompts</b><span>Builders over Prompt Crafters: no basta con preguntarle a un modelo; hay que entender, construir y verificar.</span></div>
+
+<section class="sec" id="g-kit">
+<h3 class="sec-h"><span class="n">Kit de herramientas</span>Prepara tu entorno</h3>
+<p>Instala esto durante la primera semana. Todo es gratuito. Los modelos de lenguaje de los ejercicios técnicos corren <b>en tu propia computadora dentro de Docker, con Ollama</b>: no necesitas pagar una API ni enviar datos a terceros. Los perfiles complementarios solo necesitan el navegador, un asistente de IA y una hoja de cálculo.</p>
+</div>
+<div class="tbl wide"><table>
+<thead><tr><th>Herramienta</th><th>Para qué la usarás</th><th>Ruta</th><th>Cuándo</th></tr></thead>
+<tbody>
+<tr><td>Git y una cuenta de GitHub</td><td>Control de versiones y evidencia de tu trabajo</td><td>Ambas</td><td>Semana 1</td></tr>
+<tr><td>Editor de código (por ejemplo, VS Code)</td><td>Escribir código y documentos en Markdown</td><td>Ambas</td><td>Semana 1</td></tr>
+<tr><td>Python 3.10 o superior</td><td>Scripts, datos, modelos y servidores MCP</td><td>Técnica</td><td>F1 en adelante</td></tr>
+<tr><td>Jupyter o Google Colab</td><td>Cuadernos para explorar datos y entrenar modelos (Colab no requiere instalación)</td><td>Técnica</td><td>F4</td></tr>
+<tr><td>Docker</td><td>Correr Ollama en un contenedor, sin instalar nada más en tu sistema</td><td>Técnica</td><td>F1–F5</td></tr>
+<tr><td>Ollama (imagen <code>ollama/ollama</code>)</td><td>Modelos abiertos locales para chat y embeddings, con una API en <code>localhost:11434</code></td><td>Técnica</td><td>F1–F5</td></tr>
+<tr><td>Node.js</td><td>Lo usa el MCP Inspector para probar tu servidor MCP</td><td>Técnica</td><td>F5</td></tr>
+<tr><td>Un asistente de IA en el navegador</td><td>Diseñar y probar prompts, comparar respuestas</td><td>Ambas</td><td>F1–F2</td></tr>
+<tr><td>Hoja de cálculo y herramienta de diagramas</td><td>Matrices, mapas de actores, casos de prueba y flujos</td><td>Complementaria</td><td>F1 en adelante</td></tr>
+</tbody></table></div>
+<div class="col">
+<div class="callout"><p><b>Nunca uses datos personales reales en los ejercicios.</b> Usa datos públicos, sintéticos o anonimizados. Ollama corre en tu máquina, pero los asistentes en la nube no: lo que pegas ahí sale de tu computadora. Aprender a decidir qué datos pueden ir a dónde es parte del módulo F3.</p></div>
+<p>Si tu computadora tiene poca memoria, usa los modelos pequeños que proponen los DIY (por ejemplo, <code>llama3.2:1b</code>). Responden más lento y se equivocan más, y eso también sirve para aprender sobre los límites de los modelos.</p>
+
+<section class="sec" id="g-ruta">
+<h3 class="sec-h"><span class="n">Tu recorrido</span>Dónde estás y qué viene</h3>
+<p>Las fechas exactas las publica la coordinación de cada cohorte. El orden y las reglas para avanzar son siempre los mismos:</p>
+</div>
+<div class="tbl wide"><table>
+<thead><tr><th>Etapa</th><th>Qué haces</th><th>Qué necesitas para avanzar</th></tr></thead>
+<tbody>
+<tr><td>Fundamentos (F1–F5)</td><td>Clases, lecturas y un DIY por módulo</td><td>Los cinco entregables y la matriz mínima de preparación (Readiness Gate)</td></tr>
+<tr><td>The AI Challenge (3 semanas)</td><td>Equipo de 4 resuelve un reto real con IA</td><td>Nota final ≥ 70 y nota individual ≥ 60, sujeto a cupo</td></tr>
+<tr><td>Bootcamp técnico (1 semana)</td><td>Cuatro días de clases y laboratorios, y un hackathon de 48 horas</td><td>Proyecto funcional, pitch de 15 minutos y defensa de tu rol</td></tr>
+<tr><td>Certificación</td><td>Evaluación final y emisión de la credencial por ANIA</td><td>Competencias, autoría y defensa aprobadas</td></tr>
+</tbody></table></div>
+<div class="col"></section></div>

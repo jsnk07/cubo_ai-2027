@@ -1,0 +1,173 @@
+<section class="part" id="parte-5"><canvas data-scene="part" data-v="5" aria-hidden="true"></canvas><div class="inner"><div class="num">Module F5</div><h2>Language models, agents, the MCP protocol and infrastructure</h2><p>How an LLM works inside, how documents and tools are connected to it, and how much the infrastructure that runs it costs and who controls it.</p></div></section>
+
+<div class="col">
+<section class="sec" id="f5">
+<h3 class="sec-h"><span class="n">F5 · Overview</span>What you will achieve</h3>
+<div class="objectives"><div class="lbl">By the end of F5 you will be able to</div><ul>
+<li>Explain how an LLM works, its capabilities and its limits.</li>
+<li>Build applications with document retrieval (RAG) and agents.</li>
+<li>Implement an MCP server that connects a model with tools and data.</li>
+<li>Design reliable and scalable solutions with systems thinking.</li>
+<li>Analyze compute costs, energy use and technological sovereignty.</li>
+</ul><div class="meta-row"><span>5 topics</span><span>Deliverable: agent with RAG and MCP server + architecture + costs</span></div></div>
+<div class="topicmap"><a href="#f5-1"><b>F5.1</b>How an LLM works</a><a href="#f5-2"><b>F5.2</b>RAG and agents</a><a href="#f5-3"><b>F5.3</b>The MCP protocol</a><a href="#f5-4"><b>F5.4</b>Systems thinking</a><a href="#f5-5"><b>F5.5</b>Infrastructure and sovereign AI</a></div>
+
+<section class="sec" id="f5-1">
+<h3 class="sec-h"><span class="n">F5.1</span>Understanding large language models (LLMs)</h3>
+<p>An LLM is a neural network trained for a simple task: predicting the next piece of text. The text is split into <b>tokens</b> (word fragments), each token becomes a vector of numbers, and the Transformer architecture uses an <b>attention</b> mechanism to decide which parts of the previous text matter for predicting the next one.</p>
+<p>Trained on huge amounts of text and then tuned to follow instructions, that predictor learns to summarize, translate, reason step by step and write code. But it keeps its limits:</p>
+<ul>
+<li><b>Context window:</b> it only “sees” a limited number of tokens at a time.</li>
+<li><b>Frozen knowledge:</b> it does not know what happened after its training or what is in your documents.</li>
+<li><b>Non-deterministic:</b> with a high <i>temperature</i>, the same question can give different answers.</li>
+<li><b>Cost per token:</b> every input and output token consumes compute and, in paid services, money.</li>
+</ul>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Tokens → vectors → attention → next token.</li>
+<li>For it to know about your data, you have to give it in the context (RAG) or through tools.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>If a model has an 8,000-token window and your manual has 300 pages, how would you give it the information it needs?</div>
+
+<section class="sec" id="f5-2">
+<h3 class="sec-h"><span class="n">F5.2</span>RAG systems and agents</h3>
+<p><b>RAG</b> (retrieval-augmented generation) answers with your documents in three steps:</p>
+<ol>
+<li><b>Index:</b> split the documents into fragments (chunking) and turn each into an <b>embedding</b>, a vector that represents its meaning. Store them in a vector database.</li>
+<li><b>Retrieve:</b> turn the question into an embedding and find the most similar fragments.</li>
+<li><b>Generate:</b> give the model the question together with those fragments and ask it to answer only from them and cite where each fact came from.</li>
+</ol>
+<p>An <b>agent</b> goes one step further: the model decides which tools to use and in what order (search documents, call an API, do a calculation) and repeats until the task is done. More autonomy means more capability and also more risk, which is why agents need clear limits and oversight (F3.3).</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>RAG = index, retrieve, generate with citations.</li>
+<li>Agent = model that chooses tools in a loop until it finishes.</li>
+<li>RAG quality depends above all on retrieval.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>If the RAG answers badly, how do you know whether the fragment search or the answer generation failed?</div>
+
+<section class="sec" id="f5-3">
+<h3 class="sec-h"><span class="n">F5.3</span>Model Context Protocol (MCP) and skills</h3>
+<p>Every application that connected a model with a tool used to write its own integration. The <b>Model Context Protocol (MCP)</b> is an open standard that solves this: an <b>MCP server</b> exposes tools, resources and prompt templates, and any compatible <b>MCP client</b> can use them without extra code.</p>
+<ul>
+<li><b>Tools:</b> functions the model can ask to run, such as <code>search_documents</code> or <code>create_ticket</code>.</li>
+<li><b>Resources:</b> data the client can read, such as a file or a record.</li>
+<li><b>Prompts:</b> reusable templates the server offers.</li>
+</ul>
+<p>The server controls which data is accessed and with what permissions: the model never touches your database directly, it only asks for a defined tool to run. <b>Skills</b> are packages of instructions and resources that teach an assistant to do a specific task consistently.</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>MCP separates the model from the tools with a standard contract.</li>
+<li>The server defines what can be done and with what permissions.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>Which tool in your institution would you expose first as an MCP server, and what permissions would you give it?</div>
+
+<section class="sec" id="f5-4">
+<h3 class="sec-h"><span class="n">F5.4</span>Systems thinking and scalability</h3>
+<p>A prototype that works on your computer is not yet a system. For it to be reliable in production you have to think about its parts and how they fail:</p>
+<ul>
+<li><b>Components:</b> interface, orchestration, model, retrieval, tools, storage, logs.</li>
+<li><b>Failures:</b> what if the model does not respond, takes too long or returns garbage? Retries, timeouts, fallback answers.</li>
+<li><b>Continuous evaluation:</b> a fixed set of questions with known answers that runs every time you change something.</li>
+<li><b>Observability:</b> logging inputs, outputs, latency, tokens and errors to understand what happens.</li>
+<li><b>Scale:</b> how many users at once, how much latency is acceptable, how much each query costs.</li>
+</ul>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Diagram first: components, data flows and failure points.</li>
+<li>Without a fixed evaluation set you don't know whether a change helped or hurt.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>If your assistant goes from 10 to 10,000 users a day, which part of the system breaks first?</div>
+
+<section class="sec" id="f5-5">
+<h3 class="sec-h"><span class="n">F5.5</span>Infrastructure, compute economics and sovereign AI</h3>
+<p>Behind every answer there is hardware: GPUs in a data center or on your computer, electricity and cooling. Choosing where a model runs is a technical, economic and strategic decision.</p>
+</div>
+<div class="tbl wide"><table>
+<thead><tr><th>Option</th><th>Advantages</th><th>Disadvantages</th></tr></thead>
+<tbody>
+<tr><td>A cloud provider's API</td><td>Most capable models, no own hardware, pay per use</td><td>Data leaves the institution, variable cost, provider dependence</td></tr>
+<tr><td>Open model on own or national servers</td><td>Data control, predictable cost, local capacity</td><td>Investment in hardware and staff, models sometimes less capable</td></tr>
+<tr><td>Small model on the device</td><td>Full privacy, works offline</td><td>Limited capability, depends on the user's device</td></tr>
+</tbody></table></div>
+<div class="col">
+<p><b>Sovereign AI</b> is the ability of a country or institution to develop, operate and govern AI systems with infrastructure, data and talent under its control. It does not mean avoiding every external service, but being able to choose and having alternatives.</p>
+<p>To compare options, calculate the <b>cost per query</b>: input and output tokens per query × price per token (or the cost of hardware and energy spread across queries).</p>
+<div class="keys"><div class="lbl">Key ideas</div><ul>
+<li>Where the model runs decides cost, privacy and control.</li>
+<li>Sovereignty is being able to choose, not isolating yourself.</li>
+</ul></div>
+<div class="think"><b>Think about it</b>Which public services should run on national infrastructure and which could use external services?</div>
+
+<section class="sec" id="f5-eval">
+<h3 class="sec-h"><span class="n">F5 · Self-assessment</span>Check what you learned</h3>
+<details class="qa"><summary>What is a token and why does it matter?</summary><p>A fragment of text the model processes. It determines how much fits in the context window and how much each query costs.</p></details>
+<details class="qa"><summary>Describe the three steps of a RAG system.</summary><p>Index the documents in fragments with embeddings, retrieve the fragments most similar to the question and generate the answer with those fragments as context.</p></details>
+<details class="qa"><summary>What sets an agent apart from a simple chat?</summary><p>The agent decides which tools to use and in what order, in a loop, until a task is done.</p></details>
+<details class="qa"><summary>What does an MCP server expose?</summary><p>Tools, resources and prompts that any compatible MCP client can use.</p></details>
+<details class="qa"><summary>How do you calculate the cost per query of a cloud model?</summary><p>Input and output tokens per query multiplied by the price per token of each type.</p></details>
+</section>
+</div>
+
+<div class="diy" id="diy-f5">
+<div class="diy-h"><div class="tag-diy">DIY WORKSHOP · F5</div><h4>Your first agent with RAG and MCP</h4><p>Connect a local model to your own documents through an MCP server, measure its quality and calculate what it would cost to run. Produces the F5 deliverable.</p><div class="meta-row"><span>4–5 hours</span><span>Pairs recommended</span><span>Technical: Docker + Ollama + MCP</span></div></div>
+<div class="diy-b">
+ <div class="route t"><h5>Technical route</h5><span class="who">MCP server with semantic search and an agent that uses it</span>
+ <ol>
+  <li>With Ollama running (F1), download an embeddings model and install the libraries:
+<pre><code>docker exec -it ollama ollama pull nomic-embed-text
+pip install "mcp[cli]&gt;=2" numpy requests</code></pre></li>
+  <li>Put five to ten short Markdown documents in the <code>docs/</code> folder (for example, a public service's FAQ).</li>
+  <li>Write <code>server.py</code>:
+<pre><code>from pathlib import Path
+import numpy as np, requests
+from mcp.server.mcpserver import MCPServer
+
+API = "http://localhost:11434/api"
+mcp = MCPServer("documents")
+docs = {p.name: p.read_text() for p in Path("docs").glob("*.md")}
+
+def embed(texts):
+    r = requests.post(f"{API}/embed", json={"model": "nomic-embed-text", "input": texts})
+    return np.array(r.json()["embeddings"])
+
+E = embed(list(docs.values()))
+
+@mcp.tool()
+def search_documents(question: str, k: int = 3) -> list[dict]:
+    """Returns the documents most relevant to the question."""
+    q = embed([question])[0]
+    s = E @ q / (np.linalg.norm(E, axis=1) * np.linalg.norm(q))
+    names = list(docs)
+    return [{"source": names[i], "text": docs[names[i]]} for i in s.argsort()[::-1][:k]]
+
+if __name__ == "__main__":
+    mcp.run()</code></pre>
+<p class="note">The code uses version 2 of the MCP Python SDK. In version 1 the class was called <code>FastMCP</code> and was imported from <code>mcp.server.fastmcp</code>.</p></li>
+  <li>Test it with the MCP Inspector, which runs on Node.js: <code>npx @modelcontextprotocol/inspector python server.py</code>. In the <b>Tools</b> tab, run <code>search_documents</code> with a question.</li>
+  <li>Write <code>agent.py</code>: it receives a question, calls the tool, builds a prompt with the fragments and asks the model to answer <b>only</b> from them and cite the source. If it can't find the answer, it should say “not in the documents”.</li>
+  <li>Run 15 test questions (10 answered in the documents and 5 not). Record correct answers, invented answers, tokens (<code>prompt_eval_count</code>, <code>eval_count</code>) and seconds per answer.</li>
+  <li>Draw the architecture and calculate the cost per query on your machine and with a cloud API's published price.</li>
+ </ol></div>
+ <div class="route c"><h5>Complementary route</h5><span class="who">Agent specification, evaluation and costs</span>
+ <ol>
+  <li>Choose a service that an agent with documents could handle, for example guidance on a procedure.</li>
+  <li>Write the specification: users, questions it must resolve, source documents, MCP tools it would need and actions it <b>cannot</b> take without human approval.</li>
+  <li>Build the evaluation set: 20 questions with their correct answer and source, including 5 the agent must refuse to answer.</li>
+  <li>Test it with an AI assistant to which you attach the documents, and score each answer: correct with citation, correct without citation, invented or appropriate refusal.</li>
+  <li>Build the cost sheet: queries per month, tokens per query and published price of two options (cloud API and open model on own server). Add a sovereignty and risk column.</li>
+ </ol></div>
+</div>
+{{SHOTS_F5}}
+<div class="diy-f">
+ <div><div class="lbl">Deliverable</div><p>A prototype of an agent with RAG and an integrated MCP server (technical route) or the full specification with its evaluation set (complementary route), in both cases with an architecture diagram and an infrastructure cost assessment.</p></div>
+ <div><div class="lbl">Checklist</div><ul class="check"><li>Answers cite their source.</li><li>The agent can say “not in the documents”.</li><li>You have metrics: correct, invented, time and tokens.</li><li>The cost per query is calculated, not eyeballed.</li></ul></div>
+</div>
+</div>
+
+<div class="col">
+<h4><span class="n">F5</span>Recommended readings</h4>
+<ul class="readings">
+<li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Vaswani et al., “Attention Is All You Need” (2017)</a>. <span class="kind">paper · Transformer architecture</span></li>
+<li><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener">Lewis et al., “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” (2020)</a>. <span class="kind">paper · RAG</span></li>
+<li><a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener">Model Context Protocol: official documentation</a>. <span class="kind">specification and guides</span></li>
+<li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Anthropic, “Building effective agents”</a>. <span class="kind">agent design guide</span></li>
+<li><a href="https://huggingface.co/learn/llm-course" target="_blank" rel="noopener">Hugging Face, LLM course</a>. <span class="kind">free course</span></li>
+</ul>
+</div>

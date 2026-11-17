@@ -1,0 +1,98 @@
+<section class="part" id="parte-7"><canvas data-scene="part" data-v="7" aria-hidden="true"></canvas><div class="inner"><div class="num">Parte VII</div><h2>Certificación y verificación</h2><p>La credencial es institucional y su verificación es criptográfica. Son dos cosas distintas y ambas importan.</p></div></section>
+
+<div class="col">
+<section class="sec" id="s23">
+<h3 class="sec-h"><span class="n">Sección 23</span>Marco de certificación</h3>
+<p>La certificación de CUBO_ai se basa en la competencia demostrada, no en la simple asistencia. Para calificar, el participante debe:</p>
+<ol><li>Completar el plan de estudios requerido.</li><li>Completar los requisitos de The AI Challenge.</li><li>Avanzar con éxito en el proceso de selección.</li><li>Completar el Bootcamp técnico.</li><li>Completar el proyecto de hackathon.</li><li>Alcanzar los umbrales de competencia establecidos.</li><li>Completar con éxito la defensa y evaluación final.</li></ol>
+</section>
+
+<section class="sec" id="s24">
+<h3 class="sec-h"><span class="n">Sección 24</span>Emisión de credenciales y gobernanza institucional</h3>
+<p>La arquitectura de certificación separa la certificación institucional de la verificación digital.</p>
+<div class="tiles">
+<div class="tile"><div class="ti" data-ic="cube"></div><b>24.1 · CUBO_ai</b><span>Diseño curricular, formación y capacitación, evaluación, valoración de competencias y decisión de certificación.</span></div>
+<div class="tile"><div class="ti" data-ic="shield"></div><b>24.2 · ANIA</b><span>La Agencia Nacional de Inteligencia Artificial, institución a cargo del programa, emite y reconoce oficialmente la credencial, la publica en la plataforma institucional designada y gestiona los registros institucionales.</span></div>
+<div class="tile"><div class="ti" data-ic="hash"></div><b>24.3 · Capa de verificación criptográfica</b><span>Hash SHA-256 y sellado de tiempo inmutable (OpenTimestamps) asociados al registro digital de la credencial.</span></div>
+</div>
+<h4><span class="n">24.3</span>Capa de verificación criptográfica</h4>
+<p>La infraestructura de verificación seleccionada usa registros criptográficos, como el hash SHA-256 y el sellado de tiempo inmutable con OpenTimestamps, asociados al registro de la credencial digital, para garantizar su integridad y trazabilidad.</p>
+<p>Esta capa no debe describirse como la institución que certifica a los participantes. Su función es aportar evidencia criptográfica asociada al registro digital. <b>El certificado sigue siendo una credencial institucional emitida por la autoridad competente.</b></p>
+</section>
+
+<section class="sec" id="s25">
+<h3 class="sec-h"><span class="n">Sección 25</span>Modelo de verificación digital de credenciales</h3>
+<p>El modelo propuesto es:</p>
+<p class="flow">Evaluación CUBO_ai → certificación institucional → emisión oficial de la credencial → publicación → sellado de tiempo criptográfico → referencia de verificación → <b>verificación independiente</b></p>
+<p>El principio operativo es:</p>
+</div>
+
+<figure class="fig verify">
+<div class="scroll"><svg viewBox="0 0 960 230" role="img" aria-label="Emitir, calcular el hash, sellar el tiempo, publicar y verificar" style="min-width:680px">
+ <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--muted)"/></marker></defs>
+ <g transform="translate(40 40)"><path d="M0 0h86l34 34v116H0z" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/><path d="M86 0v34h34" fill="none" stroke="var(--ink)" stroke-width="2"/><rect x="16" y="50" width="70" height="7" rx="3" fill="var(--line)"/><rect x="16" y="66" width="88" height="7" rx="3" fill="var(--line)"/><rect x="16" y="82" width="60" height="7" rx="3" fill="var(--line)"/><circle cx="88" cy="120" r="16" fill="var(--acc)"/><path d="M81 120l5 5 9-10" stroke="var(--on-sec)" stroke-width="2.5" fill="none"/></g>
+ <path d="M172 115H222" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/>
+ <g transform="translate(232 55)"><rect width="150" height="120" rx="14" fill="var(--night)"/><text x="75" y="34" text-anchor="middle" style="font:400 16px Anton,sans-serif;fill:var(--acc-hi)">SHA-256</text>
+  <text x="75" y="62" text-anchor="middle" style="font:500 11px IBM Plex Mono,monospace;fill:var(--on-night-muted)">9f2c…a71e</text><text x="75" y="80" text-anchor="middle" style="font:500 11px IBM Plex Mono,monospace;fill:var(--on-night-muted)">04bd…3c58</text><text x="75" y="98" text-anchor="middle" style="font:500 11px IBM Plex Mono,monospace;fill:var(--on-night-dim)">huella única</text></g>
+ <path d="M392 115H442" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/>
+ <g transform="translate(452 30)">
+  <g stroke="var(--sec)" stroke-width="2" fill="none"><path d="M85 22L45 62M85 22L125 62M45 62L25 100M45 62L65 100M125 62L105 100M125 62L145 100"/></g>
+  <g fill="var(--sec)"><circle cx="85" cy="22" r="9"/><circle cx="45" cy="62" r="7"/><circle cx="125" cy="62" r="7"/><circle cx="25" cy="100" r="6"/><circle cx="65" cy="100" r="6"/><circle cx="105" cy="100" r="6"/></g>
+  <circle cx="145" cy="100" r="8" fill="var(--acc)"><animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/></circle>
+  <rect x="0" y="128" width="170" height="50" rx="10" fill="var(--sec-soft)" stroke="var(--sec)" stroke-width="2"/>
+  <text x="85" y="150" text-anchor="middle" class="svgtxt">sello de tiempo</text><text x="85" y="168" text-anchor="middle" class="svgsub">OpenTimestamps · .ots</text>
+ </g>
+ <path d="M622 115H672" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/>
+ <g transform="translate(682 50)"><rect width="120" height="130" rx="12" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/><rect width="120" height="26" rx="12" fill="var(--night)"/><circle cx="16" cy="13" r="4" fill="var(--acc)"/><circle cx="30" cy="13" r="4" fill="var(--on-night-dim)"/><rect x="14" y="42" width="92" height="8" rx="4" fill="var(--line)"/><rect x="14" y="60" width="70" height="8" rx="4" fill="var(--line)"/><rect x="8" y="88" width="104" height="26" rx="8" fill="var(--acc-soft)" stroke="var(--acc)"/><text x="60" y="105" text-anchor="middle" class="svgsub" style="font-size:9.5px;fill:var(--acc-deep)">registro oficial</text></g>
+ <path d="M812 115H862" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/>
+ <g transform="translate(872 70)"><circle cx="38" cy="38" r="34" fill="none" stroke="var(--acc)" stroke-width="5"/><path d="M62 62l22 22" stroke="var(--acc)" stroke-width="7" stroke-linecap="round"/><path d="M24 38l10 10 18-20" stroke="var(--ok)" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+ <circle r="6" fill="var(--acc)"><animateMotion dur="5s" repeatCount="indefinite" path="M100 115H950"/></circle>
+</svg></div>
+<div class="vsteps">
+ <div><b>1 · Emitir</b>ANIA emite el certificado en PDF.</div>
+ <div><b>2 · Hash</b>Se calcula su huella SHA-256: cualquier cambio en el PDF la altera por completo.</div>
+ <div><b>3 · Sellar</b>La huella se sella en el tiempo con OpenTimestamps, que la ancla en la blockchain de Bitcoin.</div>
+ <div><b>4 · Publicar</b>El registro se publica en el portal institucional designado.</div>
+ <div><b>5 · Verificar</b>Cualquier tercero comprueba la huella, la marca de tiempo y la prueba.</div>
+</div>
+<figcaption><b>Figura 27</b>Emitir → hash → sello de tiempo → publicar → verificar. Los valores del hash son ilustrativos.</figcaption>
+</figure>
+
+<div class="col">
+<p>A través del portal institucional oficial designado, cualquier tercero puede verificar:</p>
+<ol>
+<li><b>Autenticidad del archivo fuente:</b> el hash SHA-256 del PDF del certificado emitido.</li>
+<li><b>Marca de tiempo criptográfica:</b> el registro y la fecha y hora exactas en que se ancló el hash de la credencial.</li>
+<li><b>Prueba criptográfica:</b> la prueba verificable que permite una validación independiente y descentralizada.</li>
+</ol>
+</section>
+
+<section class="sec" id="s26">
+<h3 class="sec-h"><span class="n">Sección 26</span>Especificaciones de datos de la credencial</h3>
+<p>Una credencial digital de CUBO_ai puede contener, cuando corresponda:</p>
+<ul class="cols2"><li>Nombre del participante.</li><li>Denominación de la credencial.</li><li>Nombre del programa.</li><li>Cohorte o año.</li><li>Fecha de emisión.</li><li>Institución emisora (ANIA).</li><li>Marco de competencias.</li><li>Estado de finalización.</li><li>Identificador de la credencial.</li><li>Referencia de verificación.</li><li>Información de verificación criptográfica, cuando aplique.</li></ul>
+<p>Los registros de acceso público deben minimizar la exposición de información personal innecesaria.</p>
+</section>
+
+<section class="sec" id="s27">
+<h3 class="sec-h"><span class="n">Sección 27</span>Ciclo de vida de la verificación</h3>
+</div>
+<figure class="fig">
+<div class="life">
+ <div><small>PASO 01</small>El participante completa los requisitos</div>
+ <div><small>PASO 02</small>Evaluación final de CUBO_ai</div>
+ <div><small>PASO 03</small>Decisión de certificación</div>
+ <div class="cert"><small>PASO 04</small>Certificado emitido</div>
+ <div class="cert"><small>PASO 05</small>Credencial publicada en el canal oficial</div>
+ <div class="dig"><small>PASO 06</small>Huella digital (hash) generada</div>
+ <div class="dig"><small>PASO 07</small>Marca de tiempo criptográfica</div>
+ <div class="dig"><small>PASO 08</small>Referencia de verificación asociada</div>
+ <div class="dig"><small>PASO 09</small>Terceros verifican la credencial</div>
+</div>
+<div class="pipe-legend"><span><i style="background:var(--paper);border:1px solid var(--line)"></i>Evaluación</span><span><i style="background:var(--acc-soft)"></i>Certificación institucional</span><span><i style="background:var(--sec-soft)"></i>Verificación digital</span></div>
+<figcaption><b>Figura 28</b>Nueve pasos que separan con claridad lo institucional de lo digital.</figcaption>
+</figure>
+<div class="col">
+<p>Esto crea una distinción clara entre la certificación institucional y la verificación digital.</p>
+</section>
+</div>
