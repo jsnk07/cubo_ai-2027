@@ -193,9 +193,9 @@ page = f'''<!DOCTYPE html>
 {css}
 .toc .brand img{{height:30px;width:auto}}
 .ai{{text-transform:none!important;color:inherit}}
-.logo-slot.onbtc-img{{height:52px;padding-left:22px;border-left:1px solid var(--line)}}
+.logo-slot.onbtc-img{{height:38px;padding-left:22px;border-left:1px solid var(--line)}}
 .endmark .logo-slot{{display:inline-flex;margin:0 10px 14px}}
-.endmark .onbtc-img{{height:34px;padding-left:0;border:0}}
+.endmark .onbtc-img{{height:26px;padding-left:0;border:0}}
 </style>
 </head>
 <body>
