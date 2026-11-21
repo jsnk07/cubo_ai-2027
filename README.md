@@ -28,6 +28,7 @@ https://jsnk07.github.io/cubo_ai-2027/
 |---|---|
 | `guide_es/`, `guide_en/` | Guía del estudiante: F1–F5 con DIY de dos rutas, preparación para The AI Challenge y el Bootcamp, anexos · Student guide: F1–F5 with two-route DIYs, Challenge and Bootcamp prep, annexes |
 | `parts/`, `parts_en/` | Libro de ejecución, partes I–VIII · Execution framework, parts I–VIII |
+| `cubi.py` | Cubi, la mascota que presenta cada página y comenta las secciones · Cubi, the mascot that introduces each page and comments on sections |
 | `shots.py` | Ilustraciones de los pasos técnicos (Docker + Ollama, Jupyter, MCP Inspector) · Illustrated technical steps |
 | `assets/`, `fonts/`, `img/` | Estilos, scripts, tipografías y logos · Styles, scripts, fonts and logos |
 | `build.py`, `build_guide.py` | Generan cada página autocontenida · Build each self-contained page |

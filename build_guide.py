@@ -40,6 +40,9 @@ TOKENS = (":root{/* CUBO_ai · paleta " + PNAME + ". Layout: índice fijo a la i
   + ":root[data-theme=\"dark\"]{" + decl(P["dark"]) + "--ok:#3CCB8C;--stop:#FF7A70;color-scheme:dark}"))
 css = (B/"assets/style.css").read_text()
 js = (B/"assets/app.js").read_text()
+import cubi
+css += cubi.CSS
+js += "\n" + cubi.js()
 
 def datauri(p):
     return "data:image/png;base64," + base64.b64encode((B/p).read_bytes()).decode()
@@ -198,7 +201,7 @@ page = f'''<!DOCTYPE html>
 .endmark .onbtc-img{{height:26px;padding-left:0;border:0}}
 </style>
 </head>
-<body>
+<body data-doc="guide">
 <div class="shell">
 <nav class="toc" aria-label="{T["toc"]}">
  <div class="brand"><span class="logo-slot"><img src="{LOGO_O}" alt="CUBO_ai"></span></div>
